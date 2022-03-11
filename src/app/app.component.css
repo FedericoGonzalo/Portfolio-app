@@ -8,7 +8,7 @@
   }
 
   .toolbar {
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
     right: 0;
@@ -42,10 +42,11 @@
   }
 
   .content {
-    background: linear-gradient(70deg, black, white);
-    margin: 50px auto 32px;
+    background: linear-gradient(70deg, black, rgb(103, 165, 90));
+    margin-top: 50px ;
     padding: 0;
     max-width:100%;
+    
     flex-direction: column;
     align-items: center; 
    

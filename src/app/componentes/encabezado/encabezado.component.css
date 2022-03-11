@@ -3,12 +3,13 @@
   border-width:100px;
   color:wheat ;
   border-color: black;
+  background: linear-gradient(195deg, black, rgb(103, 165, 90));
  }
  #headerImg{
    width: 100%;
    display: flex;
    border-radius: 32px 32px 0 0 ;
-   height: 200px;
+   height:175px;
  }
 
  #fotoPerfil{
@@ -21,4 +22,7 @@
 
 
   
+ }
+ #icoConfigEncabezado{
+   color:red;
  }
