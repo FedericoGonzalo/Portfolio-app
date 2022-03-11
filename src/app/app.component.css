@@ -21,9 +21,11 @@
   }
 
   
-  .toolbar #loginIcon {
-    
-    margin: 0 15px;
+  .toolbar #loginIcon{
+    color: white;
+    margin: 0 8px;
+    font-size: 35px;
+
   }
 
   .toolbar #telegram-logo {
@@ -40,16 +42,16 @@
   }
 
   .content {
-    display: flex;
-    margin: 82px auto 32px;
-    padding: 0 16px;
-    max-width: 960px;
+    background: linear-gradient(70deg, black, white);
+    margin: 50px auto 32px;
+    padding: 0;
+    max-width:100%;
     flex-direction: column;
     align-items: center; 
-    
+   
   }
 
-  
  
   
-
+ 
+ 

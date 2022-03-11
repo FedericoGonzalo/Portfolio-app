@@ -1,0 +1,24 @@
+.border{
+  border-radius : 32px;
+  border-width:100px;
+  color:wheat ;
+  border-color: black;
+ }
+ #headerImg{
+   width: 100%;
+   display: flex;
+   border-radius: 32px 32px 0 0 ;
+   height: 200px;
+ }
+
+ #fotoPerfil{
+   border-radius: 60%;
+   border-width: 20px;
+   height: 90px;
+   width: 90px;
+   margin-left: 20px;
+   margin-top: -50px;
+
+
+  
+ }
