@@ -1,20 +1,22 @@
-.border{
-  border-radius : 32px;
-  border-width:100px;
+.caja{
+  
+  
   color:wheat ;
-  border-color: black;
   background: linear-gradient(195deg, black, rgb(103, 165, 90));
- }
+  padding: 0; 
+}
+
  #headerImg{
+   height: 150px;
    width: 100%;
-   display: flex;
-   border-radius: 32px 32px 0 0 ;
-   height:175px;
+   display:flex;
+  
+   
+   
  }
 
  #fotoPerfil{
-   border-radius: 60%;
-   border-width: 20px;
+  
    height: 90px;
    width: 90px;
    margin-left: 20px;
@@ -23,6 +25,27 @@
 
   
  }
- #icoConfigEncabezado{
-   color:red;
+ #fotoPerfil:hover{
+  height: 110px;
+  width: 110px;
  }
+
+ #icoConfigEncabezado:hover{
+   opacity: 0.8;
+ 
+}
+ #icoConfigEncabezado{
+  color: white;
+  margin: 0 8px;
+  font-size: 90%;
+ }
+#infoLista{
+  padding-right: 20px;
+}
+ #infoLista img {
+  width:30px;
+  height:30px;
+}
+#infoLista a{
+  text-decoration:none;
+}
