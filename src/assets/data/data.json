@@ -1,11 +1,25 @@
 {
-    "name": "Federico",
-    "surname":"Suarez",
-    "backImage" : "https://upload.wikimedia.org/wikipedia/commons/9/94/Abstract_blue_background7.jpg",
-    "position": "desocupado",
-    "city" : "CABA",
-    "contry": "Argentina",
-    "photo": "https://i.postimg.cc/63X3dtT0/photo.jpg"
-
-
+	"name": "Federico",
+	"surname": "Suarez",
+	"backImage": "https://upload.wikimedia.org/wikipedia/commons/9/94/Abstract_blue_background7.jpg",
+	"position": "desocupado",
+	"city": "CABA",
+	"contry": "Argentina",
+	"photo": "https://i.postimg.cc/63X3dtT0/photo.jpg",
+	"expLab": [{
+			"lugar": "aaaaaaaa",
+			"fechaInicio": "1",
+			"fechaFin": "2"
+		},
+		{
+			"lugar": "bbbbbb",
+			"fechaInicio": "3",
+			"fechaFin": "4"
+		},
+		{
+			"lugar": "ccccccc",
+			"fechaInicio": "5",
+			"fechaFin": "6"
+		}
+	]
 }

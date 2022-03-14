@@ -1,7 +1,8 @@
 
   
-
- 
+.cuerpo {
+ min-height:1000px;
+}
 
   .spacer {
     flex: 1;
