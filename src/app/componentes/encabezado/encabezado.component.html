@@ -1,20 +1,22 @@
 <div class="container border border-success rounded caja">
        <div id="encabezadoTop">
               <img class="rounded-top border-bottom" id="headerImg"
-                     src="https://upload.wikimedia.org/wikipedia/commons/9/94/Abstract_blue_background7.jpg">
+                    [src]="miPortfolio.backImage">
        </div>
        <div id="encabezadoBottom">
 
               <div>
                      <img class="border border-primary rounded-circle" id="fotoPerfil"
-                            src="https://i.postimg.cc/63X3dtT0/photo.jpg" alt="Foto del susodicho perfil">
+                            [src]="miPortfolio.photo" alt="Foto del susodicho perfil">
                      <i id="icoConfigEncabezado" class="fa-solid fa-user-pen"></i>
               </div>
 
 
 
               <div id="nombreUsario" class="d-flex justify">
-                     <h1 id="nombre">Nombre</h1>&nbsp;&nbsp;<h1 id="apellido">Apellido</h1>
+                     <h1 id="nombre">{{miPortfolio.name}}</h1>
+                     <span>&nbsp;&nbsp;</span>
+                     <h1 id="apellido">{{miPortfolio.surname}}</h1>
               </div>
 
 
