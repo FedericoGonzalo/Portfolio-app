@@ -9,7 +9,7 @@ import { SkillsComponent } from './componentes/skills/skills.component';
 import { ProyectoComponent } from './componentes/proyecto/proyecto.component';
 import { LoginComponent } from './componentes/login/login.component';
 import { HttpClientModule } from  '@angular/common/http';
-import { AppRoutingModule } from './app-routing.module.ts.module';
+import { AppRoutingModule } from './app-routing.module';
 
 @NgModule({
   declarations: [
