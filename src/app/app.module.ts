@@ -10,6 +10,7 @@ import { ProyectoComponent } from './componentes/proyecto/proyecto.component';
 import { LoginComponent } from './componentes/login/login.component';
 import { HttpClientModule } from  '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
+import { ToolbarComponent } from './componentes/toolbar/toolbar.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { AppRoutingModule } from './app-routing.module';
     SkillsComponent,
    
     ProyectoComponent,
-        LoginComponent
+        LoginComponent,
+        ToolbarComponent
   ],
   imports: [
     BrowserModule,
