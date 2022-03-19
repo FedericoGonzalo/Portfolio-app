@@ -11,4 +11,11 @@ export class PortfolioService {
   obtenerDatos():Observable<any>{
     return this.http.get('./assets/data/data.json');
   }
+
+
+  getUsers(){
+   return this.http.get('https://reqres.in/api/users?page=2');
+    
+    
+  }
 }

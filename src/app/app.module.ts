@@ -11,6 +11,7 @@ import { LoginComponent } from './componentes/login/login.component';
 import { HttpClientModule } from  '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { ToolbarComponent } from './componentes/toolbar/toolbar.component';
+import { InicioComponent } from './componentes/inicio/inicio.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { ToolbarComponent } from './componentes/toolbar/toolbar.component';
    
     ProyectoComponent,
         LoginComponent,
-        ToolbarComponent
+        ToolbarComponent,
+        InicioComponent
   ],
   imports: [
     BrowserModule,
