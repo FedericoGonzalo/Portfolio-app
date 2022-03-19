@@ -11,14 +11,15 @@ body {
   }
   .caja{
      
-     margin-top: 25px;
+   margin-top: 25px;
+ 
+   overflow: hidden;
+   width: 90%;
+   color:wheat ;
+   background: linear-gradient(195deg, black, rgb(103, 165, 90));
+  padding:0;  
    
-     overflow: hidden;
-     width: 90%;
-     color:wheat ;
-     background: linear-gradient(195deg, black, rgb(103, 165, 90));
-     padding: 0; 
-     
- }
+}
+
  
  
