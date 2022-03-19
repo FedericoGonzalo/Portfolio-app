@@ -1,58 +1,5 @@
 
   
-.cuerpo {
- min-height:1000px;
-}
-
-  .spacer {
-    flex: 1;
-  }
-
-  .toolbar {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 60px;
-    display: flex;
-    align-items: center;
-    background-color: RED;
-    color: white;
-    font-weight: 600;
-  }
-
-  
-  .toolbar #loginIcon{
-    color: white;
-    margin: 0 8px;
-    font-size: 35px;
-
-  }
-
-  .toolbar #telegram-logo {
-    color: white;
-    margin: 0 8px;
-    font-size: 45px;
-  }
-
- 
-
-  .toolbar #telegram-logo:hover, 
-  .toolbar #loginIcon:hover {
-    opacity: 0.8;
-  }
-
-  .content {
-    background: linear-gradient(70deg, black, rgb(103, 165, 90));
-    margin-top: 50px ;
-    padding: 0;
-    max-width:100%;
-    
-    flex-direction: column;
-    align-items: center; 
-   
-  }
-
  
   
  

@@ -1,1 +1,21 @@
 /* You can add global styles to this file, and also import other style files */
+
+body {
+    
+   min-height: 891px; 
+    background: linear-gradient(70deg, black, rgb(103, 165, 90));
+   
+   padding-top: 60px;
+   
+   
+  }
+  .caja{
+     
+     margin-top: 25px;
+   
+     overflow: hidden;
+     width: 90%;
+     color:wheat ;
+     background: linear-gradient(195deg, black, rgb(103, 165, 90));
+     
+ }

@@ -1,0 +1,37 @@
+.spacer {
+    flex: 1;
+  }
+
+  .toolbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    background-color: RED;
+    color: white;
+    font-weight: 600;
+  }
+
+  
+  .toolbar #loginIcon{
+    color: white;
+    margin: 0 8px;
+    font-size: 35px;
+
+  }
+
+  .toolbar #telegram-logo {
+    color: white;
+    margin: 0 8px;
+    font-size: 45px;
+  }
+
+ 
+
+  .toolbar #telegram-logo:hover, 
+  .toolbar #loginIcon:hover {
+    opacity: 0.8;
+  }
