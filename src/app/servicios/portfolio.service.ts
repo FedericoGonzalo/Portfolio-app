@@ -13,9 +13,7 @@ export class PortfolioService {
   }
 
 
-  getUsers(){
-   return this.http.get('https://reqres.in/api/users?page=2');
-    
-    
+  getUsers():Observable<any>{
+   return this.http.get('https://reqres.in/api/users?page=2');  
   }
 }

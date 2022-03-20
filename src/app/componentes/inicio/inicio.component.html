@@ -1,12 +1,23 @@
-<div class="container border border-success rounded caja">
-    <h3>Lista teoritica de  perfiles</h3>
-  
- 
-    <div *ngFor="let data of users" id="perfiles">
-       
-        <h4>{{data.first_name}}</h4><br>
-        <h4>{{data.last_name}}</h4>
-    </div>
- 
+<div class=" container border border-success rounded caja">
+    
 
-</div>
+    
+    <h3>Lista teoritica de  perfiles</h3>
+   
+   <a href="">
+      <div class="d-flex  " >
+        <div class=" caja" *ngFor="let data of usersList" id="perfiles">
+          <img class="rounded-circle" [src]="data.avatar" alt="">
+          <p>{{data.first_name}} {{data.last_name}} </p> 
+        </div>
+    
+    </div>
+
+   
+   </a> 
+   
+        
+  </div>   
+    
+    
+    
