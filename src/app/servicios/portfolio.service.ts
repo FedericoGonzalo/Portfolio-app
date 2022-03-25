@@ -9,11 +9,11 @@ export class PortfolioService {
   constructor(private http:HttpClient) { }
 
   obtenerDatos():Observable<any>{
-    return this.http.get('./assets/data/data.json');
+    return this.http.get<any>('./assets/data/data.json');
   }
 
 
   getUsers():Observable<any>{
-   return this.http.get('https://reqres.in/api/users?page=2');  
+   return this.http.get<any>('https://reqres.in/api/users?page=2');  
   }
 }
