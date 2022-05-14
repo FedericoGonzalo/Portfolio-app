@@ -1,25 +1,41 @@
 {
-	"name": "Federico",
-	"surname": "Suarez",
-	"backImage": "https://upload.wikimedia.org/wikipedia/commons/9/94/Abstract_blue_background7.jpg",
-	"position": "desocupado",
-	"city": "CABA",
-	"contry": "Argentina",
-	"photo": "https://i.postimg.cc/63X3dtT0/photo.jpg",
-	"expLab": [{
-			"lugar": "aaaaaaaa",
-			"fechaInicio": "1",
-			"fechaFin": "2"
-		},
-		{
-			"lugar": "bbbbbb",
-			"fechaInicio": "3",
-			"fechaFin": "4"
-		},
-		{
-			"lugar": "ccccccc",
-			"fechaInicio": "5",
-			"fechaFin": "6"
-		}
-	]
+    "idPersona": 1,
+    "nombre": "Federico",
+    "apellido": "Suarez Martín",
+    "residencia": "Capital Federal",
+    "urlResidencia":"https://www.google.com/maps/@-34.6154234,-58.5733841,11z",
+    "nacimiento": "1985-11-12",
+    "fotoUrl": "https://i.postimg.cc/QCLS4sXd/585e4beacb11b227491c3399.png",
+    "imgHeaderUrl": "https://upload.wikimedia.org/wikipedia/commons/9/94/Abstract_blue_background7.jpg",
+    "acercaTexto": "TEXTO ACERCA DEL USUARIO",
+    "acercaPersona": {
+        "idAcercaPersona": 2,
+        "textoAcerca": "DESCRIPCION ACERCA DEL USUARIO"
+    },
+    "experiencias": [
+        {
+            "idExperiencia": 5,
+            "puesto": "11111csdafdf",
+            "descripcion": "asdfasdf",
+            "empresa": "sdfadfd",
+            "logoEmpresa": "https://i.postimg.cc/2Shqwp02/pngwing-com.png",
+            "fechaInicio": "1999-11-10",
+            "fechaFin": "1999-12-30",
+            "tipoExperiencia": null
+        },
+        {
+            "idExperiencia": 6,
+            "puesto": "11111csdafdf",
+            "descripcion": "asdfasdf",
+            "empresa": "sdfadfd",
+            "logoEmpresa": "https://i.postimg.cc/2Shqwp02/pngwing-com.png",
+            "fechaInicio": "1999-11-10",
+            "fechaFin": "1999-12-30",
+            "tipoExperiencia": null
+        }
+    ],
+    "proyectos": [],
+    "skills": [],
+    "formaciones": [],
+    "redesSociales": []
 }

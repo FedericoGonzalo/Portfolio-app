@@ -13,7 +13,7 @@ export class ExperienciaComponent implements OnInit {
   ngOnInit(): void {
     this.datosPortfolio.obtenerDatos().subscribe(data=>{
      console.log(data) 
-     this.expererienciaList=data.expLab;
+     this.expererienciaList=data.experiencias;
     })
   }
 

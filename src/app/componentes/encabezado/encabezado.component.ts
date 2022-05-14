@@ -17,4 +17,7 @@ export class EncabezadoComponent implements OnInit {
     });
   }
 
+
+
+  
 }

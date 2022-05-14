@@ -10,28 +10,25 @@
     height: 60px;
     display: flex;
     align-items: center;
-    background-color: RED;
+    background-color: rgb(12, 112, 12);
     color: white;
     font-weight: 600;
   }
 
   
-  .toolbar #loginIcon{
+   .loginIcon{
     color: white;
     margin: 0 8px;
     font-size: 35px;
 
   }
 
-  .toolbar #telegram-logo {
-    color: white;
-    margin: 0 8px;
-    font-size: 45px;
+  .loginIcon:hover {
+    opacity: 0.8;
   }
+
 
  
 
-  .toolbar #telegram-logo:hover, 
-  .toolbar #loginIcon:hover {
-    opacity: 0.8;
-  }
+  
+ 

@@ -1,60 +1,168 @@
 <div class="container border border-success rounded caja">
      
- <img class="rounded-top border-bottom " id="headerImg" [src]="miPortfolio.backImage">
+     <img class="rounded-top border-bottom " id="headerImg" [src]="miPortfolio.imgHeaderUrl">
 
 
 
- <div >
-  <img class="border border-primary rounded-circle" id="fotoPerfil" [src]="miPortfolio.photo" alt="Foto del susodicho perfil">
-  <i id="icoConfigEncabezado" class="fa-solid fa-user-pen"></i>
+         <div >
+          <img class="border border-primary rounded-circle" id="fotoPerfil" [src]="miPortfolio.fotoUrl" alt="Foto del susodicho perfil">
+  
  </div>
  <div >
     <div id="nombreUsario" class="d-flex justify">
-       <h1 id="nombre">{{miPortfolio.name}}</h1>
+       <h1 id="nombre">{{miPortfolio.nombre}}</h1>
        <span>&nbsp;&nbsp;</span>
-       <h1 id="apellido">{{miPortfolio.surname}}</h1>
+       <h1 id="apellido">{{miPortfolio.apellido}}</h1>
     </div>
 
 
        <div class="d-flex justify-content-between">
               <div class="d-flex flex-column">
                      <div class="d-flex p-2" id="descripUser">
-                            <p>Descripcion
-                                   usuarioddddddddddddddddddddddddddddddddddddddddddd
+                            <p>{{miPortfolio.acercaTexto}}
                             </p>
                      </div>
 
                      <div class="p-2" id="ubicacionUser">
-                            <p>Ciudad Usuario</p>
+                            <p>{{miPortfolio.acercaPersona.textoAcerca}}</p>
                      </div>
               </div>
               <div id="infoLista">
-                     <ul>
-                            <!--x si se requiera mas el codigo vacio seria
-      
-                    <li><a href="#"> <img scr=""><h2></h2></a></li>
-                    -->
-                            <li><a href="#" target="_blank">
-                                          <p> <img
-                                                        src="https://seeklogo.com/images/N/newells-old-boys-logo-80B8CB2D1F-seeklogo.com.png">Algun
-                                                 link relevante</p>
+                     <ul type="none">
+                           
+                            <li>  <i class="fa-solid fa-location-dot"></i>
+                                   <a href="{{miPortfolio.urlResidencia}}" target="_blank"  >
+                                Vivo en  {{miPortfolio.residencia}}
 
                                    </a></li>
-                            <li><a href="#" target="_blank">
-                                          <p> <img
-                                                        src="https://seeklogo.com/images/N/newells-old-boys-logo-80B8CB2D1F-seeklogo.com.png">Algun
-                                                 link relevante</p>
-
-                                   </a></li>
+                                   <li>  <i class="fa-solid fa-location-dot"></i>
+                                         
+                                      Naci el  {{miPortfolio.nacimiento}}
+       
+                                          </li>
 
                      </ul>
               </div>
-
-       </div>
-
-       <button class="btn btn-danger">sepee</button>
-       <button class="btn btn-danger">sepee</button>
-       <button class="btn btn-danger">sepee</button>
-</div>
  
+       </div>
+      
+          <!-- Button trigger modal -->
+<button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#exampleModal">
+       Edicion
+     </button>
+     
+     <!-- Modal -->
+     <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" >
+       <div class="modal-dialog">
+         <div class="modal-content">
+           <div class="modal-header">
+             <h5 class="modal-title" id="exampleModalLabel">Edicion</h5>
+             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+           </div>
+           <div class="modal-body" >
+             <div class="edicionModal">
+              <form class="row g-3">
+                     <div class="col-auto">
+                       <label for="inputNombre" class="visually-hidden">NOMBRE</label>
+                       <input type="text" class="form-control" id="inputNombre" placeholder="Nombre">
+                    
+                     </div>
+                     <div class="col-auto">
+                       <button type="submit" class="btn btn-primary mb-3">Confirma cambios</button>
+                     </div>
+                   </form>
+                  
+                   <form class="row g-3">
+                     <div class="col-auto">
+                       <label for="inputApellido" class="visually-hidden">APELLIDO</label>
+                       <input type="text" class="form-control" id="inputApellido" placeholder="Apellido">
+                    
+                     </div>
+                     <div class="col-auto">
+                       <button type="submit" class="btn btn-primary mb-3">Confirma cambios</button>
+                     </div>
+                   </form>
+                   <form class="row g-3">
+                     <div class="col-auto">
+                       <label for="inputFoto" class="visually-hidden">FOTO</label>
+                       <input type="text" class="form-control" id="inputFoto" placeholder="Foto URL">
+                    
+                     </div>
+                     <div class="col-auto">
+                       <button type="submit" class="btn btn-primary mb-3">Confirma cambios</button>
+                     </div>
+                   </form>
+                   <form class="row g-3">
+                     <div class="col-auto">
+                       <label for="inputResidencia" class="visually-hidden">NOMBRE CIUDAD</label>
+                       <input type="text" class="form-control" id="inputResidencia" placeholder="Nombre en donde vivis">
+                    
+                     </div>
+                     <div class="col-auto">
+                       <button type="submit" class="btn btn-primary mb-3">Confirma cambios</button>
+                     </div>
+                   </form>
+                   <form class="row g-3">
+                     <div class="col-auto">
+                       <label for="inputUrlResidencia" class="visually-hidden">Url GOOGLE MAPS</label>
+                       <input type="text" class="form-control" id="inputUrlResidencia" placeholder="Url de Google maps ">
+                    
+                     </div>
+                     <div class="col-auto">
+                       <button type="submit" class="btn btn-primary mb-3">Confirma cambios</button>
+                     </div>
+                   </form>
+                   <form class="row g-3">
+                     <div class="col-auto">
+                       <label for="inputAcercaTexto" class="visually-hidden">TEXTO ACERCA USUARIO</label>
+                       <input type="text" class="form-control" id="inputAcercaTexto" placeholder="Texto acerca usuario ">
+                    
+                     </div>
+                     <div class="col-auto">
+                       <button type="submit" class="btn btn-primary mb-3">Confirma cambios</button>
+                     </div>
+                   </form>
+                   <form class="row g-3">
+                     <div class="col-auto">
+                       <label for="inputDescripAcercaTexto" class="visually-hidden">Descripcion ACERCA USUARIO</label>
+                       <input type="text" class="form-control" id="inputDescripAcercaTexto" placeholder="Descripcion  usuario ">
+                    
+                     </div>
+                     <div class="col-auto">
+                       <button type="submit" class="btn btn-primary mb-3">Confirma cambios</button>
+                     </div>
+                   </form>
+                   
+                   <form class="row g-3">
+                     <div class="col-auto">
+                       <label for="inputUrlImgHeader" class="visually-hidden">IMG HEADER</label>
+                       <input type="text" class="form-control" id="inputUrlImgHeader" placeholder="Imagen cabezera">
+                    
+                     </div>
+                     <div class="col-auto">
+                       <button type="submit" class="btn btn-primary mb-3">Confirma cambios</button>
+                     </div>
+                   </form>
+                <!--   <form class="row g-3">
+                     <div class="col-auto" >
+                       <label for="inputNacimiento" class="visually-hidden">Fecha Nacimiento</label>
+                       <input type="date" data-date-format="yyyy-mm-dd" class="form-control" id="inputNacimiento" >
+                    
+                     </div>
+                     <div class="col-auto">
+                       <button type="submit" class="btn btn-primary mb-3">Confirma cambios</button>
+                     </div>
+                   </form>-->
+
+
+             </div>
+           </div>
+           <div class="modal-footer">
+             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+           </div>
+         </div>
+       </div>
+     </div>           
+            
+       
 </div>

@@ -37,6 +37,15 @@
   width:30px;
   height:30px;
 }
-#infoLista a{
-  text-decoration:none;
+ 
+a{
+  text-decoration: none;
+  color:aliceblue
+}
+h5{
+  color: black;
+}
+
+.edicionModal p{
+  color: black;
 }
