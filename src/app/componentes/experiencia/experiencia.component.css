@@ -1,0 +1,12 @@
+img {
+    width:4rem;
+    height: 4rem;
+    background-color: rgb(19, 107, 81);
+    border-radius: 50%;
+    
+    
+}
+
+#loopExp{
+    display: inline;
+}

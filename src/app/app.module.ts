@@ -36,7 +36,8 @@ import { InterceptorService } from './servicios/interceptor.service';
     BrowserModule,
     HttpClientModule,
     AppRoutingModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+   
   ],
   providers: [PortfolioService,
   { provide: HTTP_INTERCEPTORS, useClass: InterceptorService, multi:true}

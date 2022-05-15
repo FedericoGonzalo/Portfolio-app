@@ -17,6 +17,13 @@ export class PortfolioService {
    return this.http.get<any>('https://reqres.in/api/users?page=2');  
   }
  
- 
-      
+ /* editUserNombre(user: any): Observable<any>{
+    return this.http.put('localhost:8080/api/personas/persona/editar/{{miPorfolio.idPersona}}/nombre', user);
+  }
+      */
+
+  
+
+
+
 }

@@ -9,7 +9,7 @@ import { AutenticacionService } from 'src/app/servicios/autenticacion.service';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
-  form:FormGroup
+  form:FormGroup;
   constructor(private formBuilder:FormBuilder,private autenticationService:AutenticacionService, private ruta:Router ) { 
     this.form=this.formBuilder.group({
       email:['',[Validators.required,Validators.email]],
