@@ -1,1 +1,216 @@
-<p>educacion works!</p>
+<div class="container border border-success rounded caja">
+  <hr>
+   <div class="d-flex justify-content-evenly">
+         <h1>FORMACION</h1>
+         <!-- Button trigger modal -->
+        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+        Launch static backdrop modal
+        </button>
+ 
+      <!-- Modal -->
+      <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+   <div class="modal-dialog">
+     <div class="modal-content">
+       <div class="modal-header">
+         <h5 class="modal-title" id="staticBackdropLabel">Modal title</h5>
+         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+       </div>
+       <div class="modal-body">
+         ...
+       </div>
+       <div class="modal-footer">
+         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+         <button type="button" class="btn btn-primary">Understood</button>
+       </div>
+     </div>
+   </div>
+ </div>
+ 
+     </div>
+     
+     <br>
+  
+   <div >
+       
+     <hr>
+         <div  *ngFor="let formac of educacionList" id="experiencias">
+        <hr>
+        
+        <div  class="d-flex justify-content-around">
+             <div id="logoEmp">
+            <img   src="{{formac.logoEmpresa}}" alt="">
+         </div>
+        <div id="tiutlo" >
+          <h2>{{formac.empresa}}</h2>
+          <h5>Titulo: <h6>{{formac.nombreTitulo}}</h6></h5>
+        </div>
+        <div id="institucion"><h2>Institucion:</h2><p>{{formac.nombreInstituto}}}</p></div>
+         
+         <div id="fechasExper">
+             <h6>Fecha Inicio {{formac.fechaInicio}} 
+             <br>
+            Fecha Finalizacion {{formac.fechaFin}} </h6>
+         </div> 
+           <h4>Finalizado</h4>
+            <div> 
+              
+                <div [ngSwitch]="formac.finalizado">
+              <i *ngSwitchCase="true" class="fa-solid fa-circle-check"></i>
+              <i *ngSwitchCase="false" class="fa-solid fa-circle-xmark"></i>
+            </div>
+          
+             
+          
+
+            </div>
+          
+
+           <div >
+              <hr>
+                 
+ 
+           
+                  <!-- Button trigger modal -->
+ <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#exampleModal">
+     Edicion
+   </button>
+   
+   <!-- Modal -->
+   <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" >
+     <div class="modal-dialog">
+       <div class="modal-content">
+         <div class="modal-header">
+           <h5 class="modal-title" id="exampleModalLabel">Edicion</h5>
+           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+         </div>
+         <div class="modal-body" >
+           <div class="edicionModal">
+           
+           
+           
+            <form class="row g-3">
+                   <div class="col-auto">
+                     <label for="inputNombre" class="visually-hidden">NOMBRE</label>
+                     <input  type="text " class="form-control" id="inputNombre" placeholder="Nombre">
+                    </div>
+                   <div class="col-auto">
+                     <button type="submit" class="btn btn-primary mb-3">Confirma cambios</button>
+                   </div>
+                 </form>
+                
+              
+              
+                 <form class="row g-3">
+                   <div class="col-auto">
+                     <label for="inputApellido" class="visually-hidden">APELLIDO</label>
+                     <input type="text" class="form-control" id="inputApellido" placeholder="Apellido">
+                  
+                   </div>
+                   <div class="col-auto">
+                     <button type="submit" class="btn btn-primary mb-3">Confirma cambios</button>
+                   </div>
+                 </form>
+ 
+                 <form class="row g-3">
+                   <div class="col-auto">
+                     <label for="inputFoto" class="visually-hidden">FOTO</label>
+                     <input type="text" class="form-control" id="inputFoto" placeholder="Foto URL">
+                  
+                   </div>
+                   <div class="col-auto">
+                     <button type="submit" class="btn btn-primary mb-3">Confirma cambios</button>
+                   </div>
+                 </form>
+ 
+                 <form class="row g-3">
+                   <div class="col-auto">
+                     <label for="inputResidencia" class="visually-hidden">NOMBRE CIUDAD</label>
+                     <input type="text" class="form-control" id="inputResidencia" placeholder="Nombre en donde vivis">
+                  
+                   </div>
+                   <div class="col-auto">
+                     <button type="submit" class="btn btn-primary mb-3">Confirma cambios</button>
+                   </div>
+                 </form>
+                 <form class="row g-3">
+                   <div class="col-auto">
+                     <label for="inputUrlResidencia" class="visually-hidden">Url GOOGLE MAPS</label>
+                     <input type="text" class="form-control" id="inputUrlResidencia" placeholder="Url de Google maps ">
+                  
+                   </div>
+                   <div class="col-auto">
+                     <button type="submit" class="btn btn-primary mb-3">Confirma cambios</button>
+                   </div>
+                 </form>
+                 <form class="row g-3">
+                   <div class="col-auto">
+                     <label for="inputAcercaTexto" class="visually-hidden">TEXTO ACERCA USUARIO</label>
+                     <input type="text" class="form-control" id="inputAcercaTexto" placeholder="Texto acerca usuario ">
+                  
+                   </div>
+                   <div class="col-auto">
+                     <button type="submit" class="btn btn-primary mb-3">Confirma cambios</button>
+                   </div>
+                 </form>
+                 <form class="row g-3">
+                   <div class="col-auto">
+                     <label for="inputDescripAcercaTexto" class="visually-hidden">Descripcion ACERCA USUARIO</label>
+                     <input type="text" class="form-control" id="inputDescripAcercaTexto" placeholder="Descripcion  usuario ">
+                  
+                   </div>
+                   <div class="col-auto">
+                     <button type="submit" class="btn btn-primary mb-3">Confirma cambios</button>
+                   </div>
+                 </form>
+                 
+                 <form class="row g-3">
+                   <div class="col-auto">
+                     <label for="inputUrlImgHeader" class="visually-hidden">IMG HEADER</label>
+                     <input type="text" class="form-control" id="inputUrlImgHeader" placeholder="Imagen cabezera">
+                  
+                   </div>
+                   <div class="col-auto">
+                     <button type="submit" class="btn btn-primary mb-3">Confirma cambios</button>
+                   </div>
+                 </form>
+              <!--   <form class="row g-3">
+                   <div class="col-auto" >
+                     <label for="inputNacimiento" class="visually-hidden">Fecha Nacimiento</label>
+                     <input type="date" data-date-format="yyyy-mm-dd" class="form-control" id="inputNacimiento" >
+                  
+                   </div>
+                   <div class="col-auto">
+                     <button type="submit" class="btn btn-primary mb-3">Confirma cambios</button>
+                   </div>
+                 </form>-->
+ 
+ 
+           </div>
+         </div>
+         <div class="modal-footer">
+           <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+         </div>
+       </div>
+     </div>
+   </div>           
+         
+         
+         
+              <hr>
+         </div>
+     
+           <hr>
+         </div>
+ 
+        </div>
+        
+ 
+ 
+   </div>
+   
+   
+     
+ 
+ 
+ </div>
+ 
