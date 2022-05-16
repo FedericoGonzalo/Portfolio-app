@@ -16,6 +16,7 @@ import { PortfolioComponent } from './componentes/portfolio/portfolio.component'
 import { ReactiveFormsModule } from '@angular/forms';
 import { PortfolioService } from './servicios/portfolio.service';
 import { InterceptorService } from './servicios/interceptor.service';
+import { NgCircleProgressModule } from 'ng-circle-progress';
 
 @NgModule({
   declarations: [
@@ -37,6 +38,11 @@ import { InterceptorService } from './servicios/interceptor.service';
     HttpClientModule,
     AppRoutingModule,
     ReactiveFormsModule,
+    NgCircleProgressModule.forRoot({
+      
+      
+    })
+ 
    
   ],
   providers: [PortfolioService,
