@@ -1,0 +1,12 @@
+.card-img-top{
+    max-height: 10rem;
+padding-left: 5%;
+gap: 2rem;
+
+}
+.row{
+    row-gap: 5rem;
+    column-gap: 5rem;
+    display:flex ;
+    
+}

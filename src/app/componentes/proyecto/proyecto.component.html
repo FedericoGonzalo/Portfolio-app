@@ -1,6 +1,53 @@
 
 <div class="container border border-success rounded caja">
+    <hr>
+<div class="d-flex justify-content-evenly">
+<h1>PROYECTOS</h1>
+        <!-- Button trigger modal -->
+        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+            Launch static backdrop modal
+            </button>
+     
+          <!-- Modal -->
+          <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+       <div class="modal-dialog">
+         <div class="modal-content">
+           <div class="modal-header">
+             <h5 class="modal-title" id="staticBackdropLabel">Modal title</h5>
+             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+           </div>
+           <div class="modal-body">
+             ...
+           </div>
+           <div class="modal-footer">
+             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+             <button type="button" class="btn btn-primary">Understood</button>
+           </div>
+         </div>
+       </div>
+     </div>
 
-
-    lkfgjdlsfkñgj
 </div>
+    
+    
+      <hr>
+            <div class="row d-flex justify-content-center ">
+               <div *ngFor="let proyect of proyectoList" class="card position-static " style="max-width: 18rem;">
+            <img src="{{proyect.urlImagenProyecto}}" class="card-img-top" alt="NOMBRE PROYECTO :{{proyect.nombre}}">
+            <div class="card-body"><h5>NOMBRE PROYECTO :{{proyect.nombre}}</h5>
+              <p class="card-text">{{proyect.descripcion}}.Realizado{{proyect.fechaRealizacion}}.</p>
+              <a href="{{proyect.urlProyecto}}" class="btn btn-primary">Ir al Proyecto</a>
+            </div>
+          </div>   
+            </div>
+          
+
+
+
+      <hr>
+       
+           
+</div>
+
+
+

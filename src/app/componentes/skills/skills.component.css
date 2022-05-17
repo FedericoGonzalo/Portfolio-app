@@ -1,7 +1,8 @@
-#hardSkills{
-    max-width: 25rem;
+
+
+
+.softSkills{
+    row-gap: 5rem;
+column-gap: 5rem;
 }
 
-#botonDelHSkills{
-   margin-bottom: 1rem;
-}

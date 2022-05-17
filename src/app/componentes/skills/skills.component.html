@@ -34,12 +34,17 @@
    
     
     <hr>
-    <div class="d-flex justify-content-around"  >
+   
   <hr> 
-        <div  class="text-center col-sm-4  col-md-4 col-lg-4" *ngFor="let hardList of hardSkillsList" id="hardSkills">
+
+
+  <div class="row align-items-start" >
+
+   <div class="col"  *ngFor="let hardList of hardSkillsList" id="hardSkills">
       
-     
-         <circle-progress 
+     <div>
+
+  <circle-progress 
       [title]=" hardList.nombreHardSkill +  hardList.porcentajeHardSkill +'%'"
       [titleColor]=" '#f5deb3' "
       [showUnits]="false"
@@ -54,7 +59,15 @@
       [animationDuration]="800" >
      
        </circle-progress>
+      
+           <!--
+<button id="botonDelHSkills " type="button" class="btn btn-danger">  <i  class="fa-solid fa-circle-xmark"></i>
+        </button>
 
+       -->  
+
+     </div>
+       
        
       
         
@@ -62,20 +75,20 @@
      
     
        
-        <span >
-          <button id="botonDelHSkills " type="button" class="btn btn-danger">  <i  class="fa-solid fa-circle-xmark"></i>
-          </button>
-        </span>
+   
+     
      
        
     
-        
-    </div>
-   <hr>
-
+   
+  
 
          
-    </div>
+      </div> <hr>
+
+  </div>
+     
+
 <!---->
 <hr>
 <div >
@@ -118,26 +131,21 @@
 <hr>
  <hr>
 
- <div  class="d-flex justify-content-around">
-
-
-
-
-
-  <span  *ngFor="let softList of skillsList" id="softSkills">
- 
+<div class="row d-flex justify-content-center ">
+  <div *ngFor="let softList of skillsList" id="softSkills" style="max-width: 18rem;">
+<br>
     <button type="button" class="btn btn-success"> <span>{{softList.nombreSkill}}&nbsp;</span>  <i  class="fa-solid fa-circle-xmark"></i></button>
+<br>
 
-</span>
+</div>
+</div>   
 
 
- </div>
 <hr>
 
 
 
 <!---->
-
 
 
 
