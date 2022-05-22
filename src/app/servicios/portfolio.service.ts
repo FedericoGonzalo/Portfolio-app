@@ -12,8 +12,7 @@ export class PortfolioService {
 URL='http://localhost:8080/';
 
 
-constructor(private http:HttpClient
-            ) { }
+constructor(private http:HttpClient) { }
 
   obtenerDatos():Observable<Persona>{
     return this.http.get<Persona>(this.URL+'api/personas/persona/ver/1');
@@ -22,8 +21,8 @@ constructor(private http:HttpClient
   
   }
 
-editNombre():Observable<Persona>{
- return this.http.put<any>(this.URL+ 'api/personas/persona/editar/1/nombre',{});
+editPersona(persona:Persona):Observable<Persona>{
+ return this.http.put<any>(this.URL+ 'api/personas/persona/editar/1',persona);
 }
 
 

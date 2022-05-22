@@ -15,10 +15,7 @@ export interface Persona{
     fotoUrl: String;
     imgHeaderUrl: String;
     acercaTexto:String;
-    acercaPersona: {
-        idAcercaPersona: number;
-        textoAcerca: String;
-       };
+    textoUsuario:String;
     experiencias:Experiencia[];
     proyectos:Proyecto [ ];
     skills: Skill [];

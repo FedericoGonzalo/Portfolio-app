@@ -24,7 +24,7 @@
                      </div>
 
                      <div class="p-2" id="ubicacionUser">
-                            <p>{{miPortfolio.acercaPersona.textoAcerca}}</p>
+                            <p>{{miPortfolio.textoUsuario}}</p>
                      </div>
               </div>
               <div id="infoLista">
@@ -64,102 +64,61 @@
              
              
              
-              <form    class="row g-3">
+              <form  [formGroup]="personaForm"    class="row g-3">
                      <div class="col-auto">
                        <label for="inputNombre" class="visually-hidden">NOMBRE</label>
                        <input  type="text " class="form-control" id="inputNombre" placeholder="Nombre">
                       </div>
-                     <div class="col-auto">
-                       <button   type="submit" class="btn btn-primary mb-3">Confirma cambios</button>
-                     </div>
-                   </form>
-                  
-                
-                
-                   <form class="row g-3">
+                   
                      <div class="col-auto">
                        <label for="inputApellido" class="visually-hidden">APELLIDO</label>
                       <input  type="text" class="form-control" id="inputApellido" placeholder="Apellido">
                     
                      </div>
-                     <div class="col-auto">
-                       <button type="submit" class="btn btn-primary mb-3">Confirma cambios</button>
-                     </div>
-                   </form>
-
-                   <form class="row g-3">
+                
                      <div class="col-auto">
                        <label for="inputFoto" class="visually-hidden">FOTO</label>
                        <input type="text" class="form-control" id="inputFoto" placeholder="Foto URL">
                     
                      </div>
-                     <div class="col-auto">
-                       <button type="submit" class="btn btn-primary mb-3">Confirma cambios</button>
-                     </div>
-                   </form>
-
-                   <form class="row g-3">
+                 
                      <div class="col-auto">
                        <label for="inputResidencia" class="visually-hidden">NOMBRE CIUDAD</label>
                        <input type="text" class="form-control" id="inputResidencia" placeholder="Nombre en donde vivis">
                     
                      </div>
-                     <div class="col-auto">
-                       <button type="submit" class="btn btn-primary mb-3">Confirma cambios</button>
-                     </div>
-                   </form>
-                   <form class="row g-3">
+                
                      <div class="col-auto">
                        <label for="inputUrlResidencia" class="visually-hidden">Url GOOGLE MAPS</label>
                        <input type="text" class="form-control" id="inputUrlResidencia" placeholder="Url de Google maps ">
                     
                      </div>
-                     <div class="col-auto">
-                       <button type="submit" class="btn btn-primary mb-3">Confirma cambios</button>
-                     </div>
-                   </form>
-                   <form class="row g-3">
+                 
                      <div class="col-auto">
                        <label for="inputAcercaTexto" class="visually-hidden">TEXTO ACERCA USUARIO</label>
                        <input type="text" class="form-control" id="inputAcercaTexto" placeholder="Texto acerca usuario ">
                     
                      </div>
-                     <div class="col-auto">
-                       <button type="submit" class="btn btn-primary mb-3">Confirma cambios</button>
-                     </div>
-                   </form>
-                   <form class="row g-3">
+                   
                      <div class="col-auto">
                        <label for="inputDescripAcercaTexto" class="visually-hidden">Descripcion ACERCA USUARIO</label>
                        <input type="text" class="form-control" id="inputDescripAcercaTexto" placeholder="Descripcion  usuario ">
                     
                      </div>
-                     <div class="col-auto">
-                       <button type="submit" class="btn btn-primary mb-3">Confirma cambios</button>
-                     </div>
-                   </form>
+                  
+                
                    
-                   <form class="row g-3">
+              
                      <div class="col-auto">
                        <label for="inputUrlImgHeader" class="visually-hidden">IMG HEADER</label>
                        <input type="text" class="form-control" id="inputUrlImgHeader" placeholder="Imagen cabezera">
                     
                      </div>
                      <div class="col-auto">
-                       <button type="submit" class="btn btn-primary mb-3">Confirma cambios</button>
+                       <button   type="submit" class="btn btn-primary mb-3">Confirma cambios</button>
                      </div>
                    </form>
-                <!--   <form class="row g-3">
-                     <div class="col-auto" >
-                       <label for="inputNacimiento" class="visually-hidden">Fecha Nacimiento</label>
-                       <input type="date" data-date-format="yyyy-mm-dd" class="form-control" id="inputNacimiento" >
-                    
-                     </div>
-                     <div class="col-auto">
-                       <button type="submit" class="btn btn-primary mb-3">Confirma cambios</button>
-                     </div>
-                   </form>-->
-
+              
 
              </div>
            </div>
