@@ -24,7 +24,7 @@ export class EncabezadoComponent implements OnInit {
               apellido:  ['',[Validators.required]],
               residencia:  ['',[Validators.required]],
               urlResidencia:  ['',[Validators.required,Validators.pattern('https?://.+')]],
-              nacimiento:  ['Date',[Validators.required]],
+              nacimiento:  ['DATE',[Validators.required]],
               fotoUrl:  ['',[Validators.required,Validators.pattern('https?://.+')]],
               imgHeaderUrl:  ['',[Validators.required,Validators.pattern('https?://.+')]],
               acercaTexto:  ['',[Validators.required]],

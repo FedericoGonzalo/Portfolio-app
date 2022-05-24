@@ -3,8 +3,8 @@
   <div class="d-flex justify-content-evenly">
         <h1>EXPERIENCIAS LABORALES</h1>
         <!-- Button trigger modal -->
-       <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
-       Launch static backdrop modal
+       <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+       AGREGAR EXPERIENCIA <i class=""></i>
        </button>
 
      <!-- Modal -->
@@ -12,15 +12,60 @@
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="staticBackdropLabel">Modal title</h5>
+        <h5 class="modal-title" id="staticBackdropLabel">Agregar una Experiencia</h5>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-        ...
+        <div class="edicionModal">
+             
+             
+             
+          <form  class="row g-3">
+               
+              <div class="col-auto">
+                   <label for="inputEmpresa" class="form-label">EMPRESA</label>
+                   <input  type="text" formControlName="empresa"  class="form-control" id="inputEmpresa" placeholder="Empresa">
+                
+                 </div>
+            
+            
+            <div class="col-auto">
+                   <label for="inputPuesto" class="form-label">PUESTO</label>
+                   <input  type="text "  formControlName="puesto" class="form-control" id="inputPuesto" placeholder="Puesto">
+                  </div>
+               
+                 <div class="col-auto">
+                   <label for="inputDescripcion" class="form-label">DESCRIPCION</label>
+                  <input  type="text" formControlName="descripcion"  class="form-control" id="inputDescripcion" placeholder="Descripcion">
+                
+                 </div>
+            
+               
+             
+                 <div class="col-auto">
+                   <label for="inputFechaInicio" class="form-label">FECHA INICIO</label>
+                   <input type="text" formControlName="fechaInicio" class="form-control" id="inputFechaInicio" placeholder="dd/mm/yyyy">
+                
+                 </div>
+            
+                 <div class="col-auto">
+                   <label for="inputFechaFin" class="form-label">FECHA FINALIZACION</label>
+                   <input type="text" formControlName="fechaFin" class="form-control" id="inputUrlResidencia" placeholder="dd/mm/yyyy">
+                
+                 </div>
+             
+               
+                 <div class="col-auto">
+                  
+                 </div>
+               
+          </form>
+
+         </div>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Understood</button>
+     <button   type="submit" class="btn btn-primary mb-3" data-bs-dismiss="modal">Nueva Experiencia</button>
+       <br>
       </div>
     </div>
   </div>
