@@ -20,7 +20,7 @@
              
              
              
-          <form  class="row g-3">
+          <form  [formGroup]="newExpForm" (ngSubmit)="onSubmitNewExp()" class="row g-3">
                
               <div class="col-auto">
                    <label for="inputEmpresa" class="form-label">EMPRESA</label>
@@ -56,17 +56,14 @@
              
                
                  <div class="col-auto">
-                  
+                   <button   type="submit" class="btn btn-primary mb-3" data-bs-dismiss="modal">Nueva Experiencia</button>
                  </div>
                
           </form>
 
          </div>
       </div>
-      <div class="modal-footer">
-     <button   type="submit" class="btn btn-primary mb-3" data-bs-dismiss="modal">Nueva Experiencia</button>
-       <br>
-      </div>
+     
     </div>
   </div>
 </div>

@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
+import { Experiencia } from '../modelos/experiencia';
 import { Persona } from '../modelos/persona';
 
 
@@ -32,7 +33,10 @@ editPersona(persona:Persona):Observable<any>{
 }
 
 
-
+//experiencia
+agregarExperiencia(experiencia:Experiencia):Observable<any>{
+  return this.http.post<any>(this.URL+ 'api/personas/persona/ver/1/newExperiencia',experiencia);
+}
  
 
 
