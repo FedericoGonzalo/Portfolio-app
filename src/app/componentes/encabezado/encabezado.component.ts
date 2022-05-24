@@ -1,6 +1,6 @@
 
 import { Component, OnInit } from '@angular/core';
-import { Form, FormBuilder, FormGroup, Validators } from '@angular/forms';
+import {  FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Persona } from 'src/app/modelos/persona';
 
 import { PortfolioService } from 'src/app/servicios/portfolio.service';
@@ -19,15 +19,15 @@ export class EncabezadoComponent implements OnInit {
               private formBuilder: FormBuilder ) {
              this.personaForm=this.formBuilder.group({
               
-              nombre:  [''],
-              apellido:  [''],
-              residencia:  [''],
-              urlResidencia:  [''],
-              nacimiento:  [''],
-              fotoUrl:  [''],
-              imgHeaderUrl:  [''],
-              acercaTexto:  [''],
-              textoUsuario:  [''],
+              nombre:  ['',[Validators.required]],
+              apellido:  ['',[Validators.required]],
+              residencia:  ['',[Validators.required]],
+              urlResidencia:  ['',[Validators.required,Validators.pattern('https?://.+')]],
+              nacimiento:  ['',[Validators.required]],
+              fotoUrl:  ['',[Validators.required,Validators.pattern('https?://.+')]],
+              imgHeaderUrl:  ['',[Validators.required,Validators.pattern('https?://.+')]],
+              acercaTexto:  ['',[Validators.required]],
+              textoUsuario:  ['',[Validators.required]],
               
              });
           this.miPortfolio;
@@ -59,7 +59,7 @@ export class EncabezadoComponent implements OnInit {
    
  this.datosPorfolio.editPersona(this.personaForm.value) .subscribe(data=>{
   console.log(data);
-    
+  this.ngOnInit();
   });   ;
     }
   
