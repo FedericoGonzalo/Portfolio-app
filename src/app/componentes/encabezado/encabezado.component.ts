@@ -1,4 +1,5 @@
 
+
 import { Component, OnInit } from '@angular/core';
 import {  FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Persona } from 'src/app/modelos/persona';
@@ -23,7 +24,7 @@ export class EncabezadoComponent implements OnInit {
               apellido:  ['',[Validators.required]],
               residencia:  ['',[Validators.required]],
               urlResidencia:  ['',[Validators.required,Validators.pattern('https?://.+')]],
-              nacimiento:  ['',[Validators.required]],
+              nacimiento:  ['Date',[Validators.required]],
               fotoUrl:  ['',[Validators.required,Validators.pattern('https?://.+')]],
               imgHeaderUrl:  ['',[Validators.required,Validators.pattern('https?://.+')]],
               acercaTexto:  ['',[Validators.required]],
@@ -50,6 +51,7 @@ export class EncabezadoComponent implements OnInit {
     this.personaForm.get("imgHeaderUrl")?.setValue(this.miPortfolio.imgHeaderUrl);
     this.personaForm.get("acercaTexto")?.setValue(this.miPortfolio.acercaTexto);
     this.personaForm.get("textoUsuario")?.setValue(this.miPortfolio.textoUsuario);
+    this.personaForm.get("nacimiento")?.setValue(this.miPortfolio.nacimiento);
     
    
   }
@@ -58,7 +60,7 @@ export class EncabezadoComponent implements OnInit {
    
    
  this.datosPorfolio.editPersona(this.personaForm.value) .subscribe(data=>{
-  console.log(data);
+  console.log(this.personaForm.value);
   this.ngOnInit();
   });   ;
     }
