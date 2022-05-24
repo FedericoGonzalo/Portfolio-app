@@ -43,6 +43,14 @@ export class EncabezadoComponent implements OnInit {
   }
   mostrarDatosEncabezado(){
     this.personaForm.get("nombre")?.setValue(this.miPortfolio.nombre);
+    this.personaForm.get("apellido")?.setValue(this.miPortfolio.apellido);
+    this.personaForm.get("residencia")?.setValue(this.miPortfolio.residencia);
+    this.personaForm.get("urlResidencia")?.setValue(this.miPortfolio.urlResidencia);
+    this.personaForm.get("fotoUrl")?.setValue(this.miPortfolio.fotoUrl);
+    this.personaForm.get("imgHeaderUrl")?.setValue(this.miPortfolio.imgHeaderUrl);
+    this.personaForm.get("acercaTexto")?.setValue(this.miPortfolio.acercaTexto);
+    this.personaForm.get("textoUsuario")?.setValue(this.miPortfolio.textoUsuario);
+    
    
   }
 
@@ -50,7 +58,7 @@ export class EncabezadoComponent implements OnInit {
    
    
  this.datosPorfolio.editPersona(this.personaForm.value) .subscribe(data=>{
-   
+  console.log(data);
     
   });   ;
     }
