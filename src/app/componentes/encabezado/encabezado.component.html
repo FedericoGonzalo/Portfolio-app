@@ -1,6 +1,6 @@
 <div class="container border border-success rounded caja">
      
-     <img class="rounded-top border-bottom " id="headerImg" [src]="miPortfolio.imgHeaderUrl">
+     <img class="rounded-top border-bottom " id="headerImg" [src]="miPortfolio.imgHeaderUrl" alt="Foto del susodicho header">
 
 
 
@@ -64,45 +64,45 @@
              
              
              
-              <form  [formGroup]="personaForm"    class="row g-3">
+              <form [formGroup]="personaForm" (ngSubmit)="onSubmit()" class="row g-3">
                      <div class="col-auto">
                        <label for="inputNombre" class="visually-hidden">NOMBRE</label>
-                       <input  type="text " class="form-control" id="inputNombre" placeholder="Nombre">
+                       <input  type="text "  formControlName="nombre" class="form-control" id="inputNombre" placeholder="Nombre">
                       </div>
                    
                      <div class="col-auto">
                        <label for="inputApellido" class="visually-hidden">APELLIDO</label>
-                      <input  type="text" class="form-control" id="inputApellido" placeholder="Apellido">
+                      <input  type="text" formControlName="apellido"  class="form-control" id="inputApellido" placeholder="Apellido">
                     
                      </div>
                 
                      <div class="col-auto">
                        <label for="inputFoto" class="visually-hidden">FOTO</label>
-                       <input type="text" class="form-control" id="inputFoto" placeholder="Foto URL">
+                       <input type="text" formControlName="fotoUrl"  class="form-control" id="inputFoto" placeholder="Foto URL">
                     
                      </div>
                  
                      <div class="col-auto">
                        <label for="inputResidencia" class="visually-hidden">NOMBRE CIUDAD</label>
-                       <input type="text" class="form-control" id="inputResidencia" placeholder="Nombre en donde vivis">
+                       <input type="text" formControlName="residencia" class="form-control" id="inputResidencia" placeholder="Nombre en donde vivis">
                     
                      </div>
                 
                      <div class="col-auto">
                        <label for="inputUrlResidencia" class="visually-hidden">Url GOOGLE MAPS</label>
-                       <input type="text" class="form-control" id="inputUrlResidencia" placeholder="Url de Google maps ">
+                       <input type="text" formControlName="urlResidencia" class="form-control" id="inputUrlResidencia" placeholder="Url de Google maps ">
                     
                      </div>
                  
                      <div class="col-auto">
                        <label for="inputAcercaTexto" class="visually-hidden">TEXTO ACERCA USUARIO</label>
-                       <input type="text" class="form-control" id="inputAcercaTexto" placeholder="Texto acerca usuario ">
+                       <input type="text" formControlName="acercaTexto" class="form-control" id="inputAcercaTexto" placeholder="Texto acerca usuario ">
                     
                      </div>
                    
                      <div class="col-auto">
                        <label for="inputDescripAcercaTexto" class="visually-hidden">Descripcion ACERCA USUARIO</label>
-                       <input type="text" class="form-control" id="inputDescripAcercaTexto" placeholder="Descripcion  usuario ">
+                       <input type="text" formControlName="textoUsuario" class="form-control" id="inputDescripAcercaTexto" placeholder="Descripcion  usuario ">
                     
                      </div>
                   
@@ -111,7 +111,7 @@
               
                      <div class="col-auto">
                        <label for="inputUrlImgHeader" class="visually-hidden">IMG HEADER</label>
-                       <input type="text" class="form-control" id="inputUrlImgHeader" placeholder="Imagen cabezera">
+                       <input type="text" formControlName="imgHeaderUrl" class="form-control" id="inputUrlImgHeader" placeholder="Imagen cabezera">
                     
                      </div>
                      <div class="col-auto">

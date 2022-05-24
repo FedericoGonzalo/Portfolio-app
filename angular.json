@@ -14,6 +14,7 @@
       "sourceRoot": "src",
       "prefix": "app",
       "architect": {
+        
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
@@ -69,6 +70,9 @@
           "defaultConfiguration": "production"
         },
         "serve": {
+
+
+          
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
@@ -83,12 +87,14 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "Portfolio-app:build"
+            "browserTarget": "Portfolio-app:build",
+            "proxyConfig": "src/proxy.conf.json"
           }
         },
         "test": {
           "builder": "@angular-devkit/build-angular:karma",
           "options": {
+            
             "main": "src/test.ts",
             "polyfills": "src/polyfills.ts",
             "tsConfig": "tsconfig.spec.json",
@@ -101,6 +107,7 @@
               "src/styles.css"
             ],
             "scripts": []
+            
           }
         }
       }

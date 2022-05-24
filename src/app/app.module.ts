@@ -11,9 +11,8 @@ import { LoginComponent } from './componentes/login/login.component';
 import { HttpClientModule, HTTP_INTERCEPTORS } from  '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { ToolbarComponent } from './componentes/toolbar/toolbar.component';
-import { InicioComponent } from './componentes/inicio/inicio.component';
 import { PortfolioComponent } from './componentes/portfolio/portfolio.component';
-import { ReactiveFormsModule } from '@angular/forms';
+import { ReactiveFormsModule, FormsModule} from '@angular/forms';
 import { PortfolioService } from './servicios/portfolio.service';
 import { InterceptorService } from './servicios/interceptor.service';
 import { NgCircleProgressModule } from 'ng-circle-progress';
@@ -30,7 +29,7 @@ import { NgCircleProgressModule } from 'ng-circle-progress';
     ProyectoComponent,
         LoginComponent,
         ToolbarComponent,
-        InicioComponent,
+  
         PortfolioComponent
   ],
   imports: [
@@ -38,6 +37,7 @@ import { NgCircleProgressModule } from 'ng-circle-progress';
     HttpClientModule,
     AppRoutingModule,
     ReactiveFormsModule,
+    FormsModule,
     NgCircleProgressModule.forRoot({
       
       

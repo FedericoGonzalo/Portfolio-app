@@ -13,58 +13,52 @@ import { PortfolioService } from 'src/app/servicios/portfolio.service';
 export class EncabezadoComponent implements OnInit {
    miPortfolio:any;
    personaForm: FormGroup;
+  
+   
   constructor(private datosPorfolio:PortfolioService,
               private formBuilder: FormBuilder ) {
              this.personaForm=this.formBuilder.group({
-              idPersona: [''],
+              
               nombre:  [''],
               apellido:  [''],
               residencia:  [''],
               urlResidencia:  [''],
-            nacimiento:  [''],
+              nacimiento:  [''],
               fotoUrl:  [''],
               imgHeaderUrl:  [''],
               acercaTexto:  [''],
               textoUsuario:  [''],
-              experiencias: [''],
-              proyectos:  [''],
-              skills:  [''],
-              hardSkills:  [''],
-              formaciones:  [''],
+              
              });
-               }
+          this.miPortfolio;
+      
+            }
  
 
   ngOnInit(): void {
     this.datosPorfolio.obtenerDatos().subscribe(data=>{
-     // console.log(data);
+    // console.log(data);
       this.miPortfolio=data;
     });  
   }
-
-  private reloadData() {
-    this.datosPorfolio.obtenerDatos().subscribe(
-      (data) => {
-        this.miPortfolio = data;
-      }
-    );
+  mostrarDatosEncabezado(){
+    this.personaForm.get("nombre")?.setValue(this.miPortfolio.nombre);
+   
   }
+
+  onSubmit() { 
+   
+   
+ this.datosPorfolio.editPersona(this.personaForm.value) .subscribe(data=>{
+   
+    
+  });   ;
+    }
+  
+ 
 
   
 
-  private loadForm(persona:Persona) {
-    this.personaForm.setValue({
-     
-      nombre:persona.nombre,
-      apellido: persona.apellido,
-      foto: persona.fotoUrl,
-      residencia:persona.residencia,
-     urlResidencia: persona.urlResidencia,
-     acercaTexto:persona.acercaTexto,
-     textoUsuario:persona.textoUsuario,
-
-    })
-  }
 
  
   
