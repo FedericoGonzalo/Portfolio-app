@@ -1,244 +1,190 @@
 <div class="container border border-success rounded caja">
- <hr>
+  <hr>
   <div class="d-flex justify-content-evenly">
-        <h1>EXPERIENCIAS LABORALES</h1>
-        <!-- Button trigger modal -->
-       <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
-       AGREGAR EXPERIENCIA <i class=""></i>
-       </button>
+    <h1>EXPERIENCIAS LABORALES</h1>
 
-     <!-- Modal -->
-     <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="staticBackdropLabel">Agregar una Experiencia</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body">
-        <div class="edicionModal">
-             
-             
-             
-          <form  [formGroup]="newExpForm" (ngSubmit)="onSubmitNewExp()" class="row g-3">
-               
-              <div class="col-auto">
-                   <label for="inputEmpresa" class="form-label">EMPRESA</label>
-                   <input  type="text" formControlName="empresa"  class="form-control" id="inputEmpresa" placeholder="Empresa">
-                
-                 </div>
-            
-            
-            <div class="col-auto">
-                   <label for="inputPuesto" class="form-label">PUESTO</label>
-                   <input  type="text "  formControlName="puesto" class="form-control" id="inputPuesto" placeholder="Puesto">
-                  </div>
-               
-                 <div class="col-auto">
-                   <label for="inputDescripcion" class="form-label">DESCRIPCION</label>
-                  <input  type="text" formControlName="descripcion"  class="form-control" id="inputDescripcion" placeholder="Descripcion">
-                
-                 </div>
-            
-               
-             
-                 <div class="col-auto">
-                   <label for="inputFechaInicio" class="form-label">FECHA INICIO</label>
-                   <input type="text" formControlName="fechaInicio" class="form-control" id="inputFechaInicio" placeholder="dd/mm/yyyy">
-                
-                 </div>
-            
-                 <div class="col-auto">
-                   <label for="inputFechaFin" class="form-label">FECHA FINALIZACION</label>
-                   <input type="text" formControlName="fechaFin" class="form-control" id="inputUrlResidencia" placeholder="dd/mm/yyyy">
-                
-                 </div>
-             
-               
-                 <div class="col-auto">
-                   <button   type="submit" class="btn btn-primary mb-3" data-bs-dismiss="modal">Nueva Experiencia</button>
-                 </div>
-               
-          </form>
 
-         </div>
-      </div>
-     
+    <div class="dropright">
+      <button (click)="onNuevaExperiencia()" class="btn btn-success dropdown-toggle" type="button"
+        id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+        Crear nueva EXPERIENCIA
+      </button>
+      <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+
+        <form [formGroup]="expeForm" (ngSubmit)="onSubmitNew()" class="row g-3">
+          <input type="hidden" name="idExperiencia" formControlName="idExperiencia">
+          <input type="hidden" name="logoEmpresa" formControlName="logoEmpresa">
+
+          <div class="col-auto">
+            <label for="inputEmpresa" class="form-label">EMPRESA</label>
+            <input type="text" formControlName="empresa" class="form-control" id="inputEmpresa" placeholder="Empresa">
+
+          </div>
+
+
+          <div class="col-auto">
+            <label for="inputPuesto" class="form-label">PUESTO</label>
+            <input type="text " formControlName="puesto" class="form-control" id="inputPuesto" placeholder="Puesto">
+          </div>
+
+          <div class="col-auto">
+            <label for="inputDescripcion" class="form-label">DESCRIPCION</label>
+            <input type="text" formControlName="descripcion" class="form-control" id="inputDescripcion"
+              placeholder="Descripcion">
+
+          </div>
+
+
+
+          <div class="col-auto">
+            <label for="inputFechaInicio" class="form-label">FECHA INICIO</label>
+            <input type="text" formControlName="fechaInicio" class="form-control" id="inputFechaInicio"
+              placeholder="dd/mm/yyyy">
+
+          </div>
+
+          <div class="col-auto">
+            <label for="inputFechaFin" class="form-label">FECHA FINALIZACION</label>
+            <input type="text" formControlName="fechaFin" class="form-control" id="inputUrlResidencia"
+              placeholder="dd/mm/yyyy">
+
+          </div>
+
+
+          <div class="col-auto">
+            <button type="submit" class="btn btn-primary mb-3" data-bs-dismiss="modal">Nueva Experiencia</button>
+          </div>
+
+        </form>
+
+      </ul>
     </div>
+
+
+
+
+
+
   </div>
-</div>
 
-    </div>
-    
-    <br>
- 
-  <div >
-      
+  <br>
+
+  <div>
+
     <hr>
-        <div  *ngFor="let expLab of expererienciaList" id="experiencias">
-       <hr>
-       
-       <div  class="d-flex justify-content-around">
-            <div id="logoEmp">
-           <img   src="{{expLab.logoEmpresa}}" alt="">
+    <div *ngFor="let expLab of experienciaList; let i = index">
+      <hr>
+
+      <div class="d-flex justify-content-around">
+        <div id="logoEmp">
+          <img src="{{expLab.logoEmpresa}}" alt="logo empresa">
         </div>
-       <div id="empresPuesto" >
-         <h2>{{expLab.empresa}}</h2>
-         <h5>Puesto Ocupado: <h6>{{expLab.puesto}}</h6></h5>
-       </div>
-       <div id="descripcion"><h6>BREVE DESCRIPCION</h6><p>{{expLab.descripcion}}}</p></div>
-        
+        <div id="empresPuesto">
+          <h2>{{expLab.empresa}}</h2>
+          <h5>Puesto Ocupado: <h6>{{expLab.puesto}}</h6>
+          </h5>
+        </div>
+        <div id="descripcion">
+          <h6>BREVE DESCRIPCION</h6>
+          <p>{{expLab.descripcion}}</p>
+        </div>
+
         <div id="fechasExper">
-            <h6>Fecha Inicio {{expLab.fechaInicio}} 
+          <h6>Fecha Inicio {{expLab.fechaInicio}}
             <br>
-           Fecha Finalizacion {{expLab.fechaFin}} </h6>
-        </div> 
-    
-          <div >
-             <hr>
-                
-
-          
-                 <!-- Button trigger modal -->
-<button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#exampleModal">
-    Edicion
-  </button>
-  
-  <!-- Modal -->
-  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" >
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">Edicion</h5>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            Fecha Finalizacion {{expLab.fechaFin}}
+          </h6>
         </div>
-        <div class="modal-body" >
-          <div class="edicionModal">
-          
-          
-          
-           <form class="row g-3">
-                  <div class="col-auto">
-                    <label for="inputNombre" class="visually-hidden">NOMBRE</label>
-                    <input  type="text " class="form-control" id="inputNombre" placeholder="Nombre">
-                   </div>
-                  <div class="col-auto">
-                    <button type="submit" class="btn btn-primary mb-3">Confirma cambios</button>
-                  </div>
-                </form>
-               
-             
-             
-                <form class="row g-3">
-                  <div class="col-auto">
-                    <label for="inputApellido" class="visually-hidden">APELLIDO</label>
-                    <input type="text" class="form-control" id="inputApellido" placeholder="Apellido">
-                 
-                  </div>
-                  <div class="col-auto">
-                    <button type="submit" class="btn btn-primary mb-3">Confirma cambios</button>
-                  </div>
-                </form>
+        <br>
+        <div class="row">
+          <hr>
 
-                <form class="row g-3">
-                  <div class="col-auto">
-                    <label for="inputFoto" class="visually-hidden">FOTO</label>
-                    <input type="text" class="form-control" id="inputFoto" placeholder="Foto URL">
-                 
-                  </div>
-                  <div class="col-auto">
-                    <button type="submit" class="btn btn-primary mb-3">Confirma cambios</button>
-                  </div>
-                </form>
 
-                <form class="row g-3">
-                  <div class="col-auto">
-                    <label for="inputResidencia" class="visually-hidden">NOMBRE CIUDAD</label>
-                    <input type="text" class="form-control" id="inputResidencia" placeholder="Nombre en donde vivis">
-                 
-                  </div>
-                  <div class="col-auto">
-                    <button type="submit" class="btn btn-primary mb-3">Confirma cambios</button>
-                  </div>
-                </form>
-                <form class="row g-3">
-                  <div class="col-auto">
-                    <label for="inputUrlResidencia" class="visually-hidden">Url GOOGLE MAPS</label>
-                    <input type="text" class="form-control" id="inputUrlResidencia" placeholder="Url de Google maps ">
-                 
-                  </div>
-                  <div class="col-auto">
-                    <button type="submit" class="btn btn-primary mb-3">Confirma cambios</button>
-                  </div>
-                </form>
-                <form class="row g-3">
-                  <div class="col-auto">
-                    <label for="inputAcercaTexto" class="visually-hidden">TEXTO ACERCA USUARIO</label>
-                    <input type="text" class="form-control" id="inputAcercaTexto" placeholder="Texto acerca usuario ">
-                 
-                  </div>
-                  <div class="col-auto">
-                    <button type="submit" class="btn btn-primary mb-3">Confirma cambios</button>
-                  </div>
-                </form>
-                <form class="row g-3">
-                  <div class="col-auto">
-                    <label for="inputDescripAcercaTexto" class="visually-hidden">Descripcion ACERCA USUARIO</label>
-                    <input type="text" class="form-control" id="inputDescripAcercaTexto" placeholder="Descripcion  usuario ">
-                 
-                  </div>
-                  <div class="col-auto">
-                    <button type="submit" class="btn btn-primary mb-3">Confirma cambios</button>
-                  </div>
-                </form>
-                
-                <form class="row g-3">
-                  <div class="col-auto">
-                    <label for="inputUrlImgHeader" class="visually-hidden">IMG HEADER</label>
-                    <input type="text" class="form-control" id="inputUrlImgHeader" placeholder="Imagen cabezera">
-                 
-                  </div>
-                  <div class="col-auto">
-                    <button type="submit" class="btn btn-primary mb-3">Confirma cambios</button>
-                  </div>
-                </form>
-             <!--   <form class="row g-3">
-                  <div class="col-auto" >
-                    <label for="inputNacimiento" class="visually-hidden">Fecha Nacimiento</label>
-                    <input type="date" data-date-format="yyyy-mm-dd" class="form-control" id="inputNacimiento" >
-                 
-                  </div>
-                  <div class="col-auto">
-                    <button type="submit" class="btn btn-primary mb-3">Confirma cambios</button>
-                  </div>
-                </form>-->
+          <div class="dropright">
+            <button (click)="onEditExperiencia(i) " class="btn btn-success dropdown-toggle" type="button"
+              id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="true">
+              Edicion
+            </button>
+            <div class="row  dropdown-menu " aria-labelledby="dropdownMenuButton1">
+              <form [formGroup]="expeForm" (ngSubmit)="onSubmit() ">
+
+
+
+                <div>
+                  <input type="hidden" name="idExperiencia" formControlName="idExperiencia">
+
+                </div>
+
+                <div>
+                  <label for="puesto" class="form-label">PUESTO</label>
+                  <input type="text " class="form-control" id="puesto" placeholder="Puesto">
+                </div>
+
+                <div>
+                  <label for="descripcion" class="form-label">DESCRIPCION</label>
+                  <input type="text " class="form-control" id="descripcion" placeholder="Descripcion">
+                </div>
+
+                <div>
+                  <label for="empresa" class="form-label">EMPRESA</label>
+                  <input type="text " class="form-control" id="empresa" placeholder="Empresa">
+                </div>
+
+                <div>
+                  <label for="fechaInicio" class="form-label">INICIO</label>
+                  <input type="text " class="form-control" id="fechaInicio" placeholder="Fecha Inicio">
+                </div>
+
+                <div>
+                  <label for="fechaFin" class="form-label">FINALIZACION</label>
+                  <input type="text " class="form-control" id="fechaFin" placeholder="Fecha Finalizacion">
+                </div>
+
+                <div>
+                  <label for="logoEmpresa" class="form-label">LOGO EMPRESA</label>
+                  <input type="text " class="form-control" id="logoEmpresa" placeholder="URL LOGO EMPRESA">
+                </div>
+
+                <div>
+                  <label for="descripcion" class="form-label">DESCRIPCION</label>
+                  <input type="text " class="form-control" id="descripcion" placeholder="Descripcion">
+                </div>
+
+                <br>
+                <div class="row-auto">
+                  <button type="submit" class="btn btn-primary mb-3" data-bs-dismiss="modal">Editar</button>
+
+                </div>
+              </form>
+              <button (click)="onDelExperiencia(i)" class="btn btn-danger " data-bs-dismiss="modal">Borrar</button>
+
+            </div>
+
+
 
 
           </div>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        </div>
-      </div>
-    </div>
-  </div>           
-        
-        
-        
-             <hr>
-        </div>
-    
+
+          <br>
+
           <hr>
+          <br>
         </div>
 
-       </div>
-       
+        <hr>
+        <br>
+        <hr>
+        <br>
+      </div>
+
+    </div>
+
 
 
   </div>
-  
-  
-    
+
+
+
 
 
 </div>

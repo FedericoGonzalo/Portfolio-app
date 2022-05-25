@@ -1,5 +1,3 @@
-
-
 import { Component, OnInit } from '@angular/core';
 import {  FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Persona } from 'src/app/modelos/persona';

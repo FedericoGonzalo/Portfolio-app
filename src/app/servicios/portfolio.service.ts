@@ -34,12 +34,20 @@ editPersona(persona:Persona):Observable<any>{
 
 
 //experiencia
-agregarExperiencia(experiencia:Experiencia):Observable<any>{
-  return this.http.post<any>(this.URL+ 'api/personas/persona/ver/1/newExperiencia',experiencia);
+obtenerExperiencias():Observable<any>{
+  return this.http.get<any>(this.URL+'api/personas/persona/ver/1/listExperiencia')
 }
- 
 
+agregarExperiencia(experiencia:Experiencia):Observable<Experiencia>{
+  return this.http.post<Experiencia>(this.URL+ 'api/personas/persona/ver/1/newExperiencia',experiencia);
+}
+ editarExperiencia(experiencia:Experiencia):Observable<Experiencia>{
+   return this.http.put<Experiencia>(this.URL+ 'api/personas/persona/ver/1/editExpe',experiencia);
+ }
 
+borrarExperiencia(idExperiencia:number){
+  return this.http.delete<any>(this.URL+ 'api/personas/persona/ver/delExp/'+idExperiencia);
+}
   
 
 
