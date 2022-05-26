@@ -1,6 +1,6 @@
 export interface HardSkill{
   
-        idHardSkill?:number;
+        idHardSkill:number;
         porcentajeHardSkill: number;
         nombreHardSkill: String;
    

@@ -2,28 +2,46 @@
 
 <div class="container border border-success rounded caja">
     <hr>
-    <div class="d-flex justify-content-evenly">
+    <div class="d-flex justify-content-around">
       
     <h1>HARD SKILLS</h1>
           <!-- Button trigger modal -->
-     <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
-        Launch static backdrop modal
+     <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#hardSkillsModal">
+       AGREGAR HARD-SKILL 
+ 
+ 
+       <i class="fa-regular fa-circle-check"></i>
         </button>
  
       <!-- Modal -->
-      <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+      <div class="modal fade" id="hardSkillsModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="hardSkillsModalLabel" aria-hidden="true">
    <div class="modal-dialog">
      <div class="modal-content">
        <div class="modal-header">
-         <h5 class="modal-title" id="staticBackdropLabel">Modal title</h5>
+         <h5 class="modal-title" id="hardSkillsModalLabel">AGREGAR HARD-SKILL</h5>
          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
        </div>
        <div class="modal-body">
-         ...
+       
+       <form [formGroup]="hardSkillForm" (ngSubmit)="onSubmitHardSkill()">
+        <div class="mb-3">
+          <label for="inputNombreHardSkill" class="form-label">Nombre Hard Skill</label>
+          <input type="Text" formControlName="nombreHardSkill" class="form-control" id="inputNombreHardSkill" >
+        </div>
+        <div class="mb-3">
+          <label for="porcentajeHSkill" class="form-label">Example range</label>
+          <input type="number" formControlName="porcentajeHardSkill" class="form-control" min="1" max="100" id="porcentajeHSkill" required="">
+        </div>
+
+        <button type="submit" class="btn btn-primary" data-bs-dismiss="modal">Understood</button>
+       </form>
+       
+        
        </div>
        <div class="modal-footer">
-         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-         <button type="button" class="btn btn-primary">Understood</button>
+      <br>
+      <br>
+         
        </div>
      </div>
    </div>
@@ -38,18 +56,19 @@
   <hr> 
 
 
-  <div class="row align-items-start" >
+  <div class="row justify-content-center" >
 
-   <div class="col"  *ngFor="let hardList of hardSkillsList" id="hardSkills">
+   <div   *ngFor="let hardSkill of hardSkillsList let i = index"  id="hardSkills">
       
      <div>
 
   <circle-progress 
-      [title]=" hardList.nombreHardSkill +  hardList.porcentajeHardSkill +'%'"
+      [title]=" hardSkill.nombreHardSkill +' '+ hardSkill.porcentajeHardSkill +' %'"
       [titleColor]=" '#f5deb3' "
       [showUnits]="false"
+      [showSubtitle]="false"
       [subtitleColor]="'#f5deb3'"
-      [percent]=" hardList.porcentajeHardSkill "
+      [percent]=" hardSkill.porcentajeHardSkill "
       [radius]="100"
       [outerStrokeWidth]="16"
       [innerStrokeWidth]="8"
@@ -59,16 +78,13 @@
       [animationDuration]="800" >
      
        </circle-progress>
-      
-           <!--
-<button id="botonDelHSkills " type="button" class="btn btn-danger">  <i  class="fa-solid fa-circle-xmark"></i>
-        </button>
 
-       -->  
+  <i (click)="borrarHardSkill(i)" class="fa-solid fa-circle-xmark"> </i>
+ 
 
      </div>
        
-       
+      </div>  
       
         
    
@@ -84,7 +100,8 @@
   
 
          
-      </div> <hr>
+      
+      <hr>
 
   </div>
      
@@ -95,32 +112,37 @@
   <div class="d-flex justify-content-around">
 
 <h1>SOFT SKILLS</h1>
-      <!-- Button trigger modal -->
- <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
-    Launch static backdrop modal
-    </button>
+             <!-- Button trigger modal -->
+             <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#softSkillsModal">
+             AGREGAR SOFT-SKILL 
+             <i class="fa-regular fa-circle-check"></i>
+              </button>
+       
+            <!-- Modal -->
+            <div class="modal fade" id="softSkillsModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="softSkillsModallLabel" aria-hidden="true">
+         <div class="modal-dialog">
+           <div class="modal-content">
+             <div class="modal-header">
+               <h5 class="modal-title" id="softSkillsModalLabel">Gonzalo</h5>
+               <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+             </div>
+             <div class="modal-body">
+              <form >
 
-  <!-- Modal -->
-  <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-<div class="modal-dialog">
- <div class="modal-content">
-   <div class="modal-header">
-     <h5 class="modal-title" id="staticBackdropLabel">Modal title</h5>
-     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-   </div>
-   <div class="modal-body">
-     ...
-   </div>
-   <div class="modal-footer">
-     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-     <button type="button" class="btn btn-primary">Understood</button>
-   </div>
- </div>
-</div>
-</div>
-
-</div>
-
+                <button type="submit" class="btn btn-primary" data-bs-dismiss="modal">Understood</button>
+               </form>
+               
+                
+               </div>
+               <div class="modal-footer">
+              <br>
+              <br>
+                 
+               </div>
+           </div>
+         </div>
+       </div>
+ 
 
 
   </div>
@@ -130,7 +152,7 @@
 
 <hr>
  <hr>
-
+<!--
 <div class="row d-flex justify-content-center ">
   <div *ngFor="let softList of skillsList" id="softSkills" style="max-width: 18rem;">
 <br>
@@ -145,7 +167,7 @@
 
 
 
-<!---->
+-->
 
 
 

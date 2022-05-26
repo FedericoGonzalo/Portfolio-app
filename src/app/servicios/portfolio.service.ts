@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Experiencia } from '../modelos/experiencia';
+import { HardSkill } from '../modelos/hardSkill';
 import { Persona } from '../modelos/persona';
 
 
@@ -49,7 +50,16 @@ borrarExperiencia(idExperiencia:number){
   return this.http.delete<any>(this.URL+ 'api/personas/persona/ver/delExp/'+idExperiencia);
 }
   
+//HARD SKILLS
 
-
+obtenerHardSkills():Observable<any>{
+  return  this.http.get<any>(this.URL+'api/personas/persona/ver/1/listahSkill')
+}
+agregarHardSkill(hardSkill:HardSkill):Observable<Experiencia>{
+  return this.http.post<Experiencia>(this.URL+ 'api/personas/persona/ver/1/newHSkill',hardSkill);
+}
+borrarHardSkill(idHardSkill:number){
+  return this.http.delete<any>(this.URL+ 'api/personas/persona/ver/delHSkill/'+idHardSkill);
+}
 
 }
