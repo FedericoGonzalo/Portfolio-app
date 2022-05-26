@@ -52,7 +52,7 @@ export class SkillsComponent implements OnInit {
     this.datosPortFolio.agregarHardSkill(this.hardSkillForm.value).subscribe(data => {
       console.log(this.hardSkillForm.value);
       this.ngOnInit();
-    });;
+    })
   }
 
   borrarHardSkill(index: number) {
@@ -74,7 +74,7 @@ onSubmitSoftSkill() {
   this.datosPortFolio.agregarSoftSkill(this.softSkillForm.value).subscribe(data => {
     console.log(this.softSkillForm.value);
     this.ngOnInit();
-  });;
+  })
 }
 borrarSoftSkill(index:number){
   let softSkill: Skill = this.softSkillsList[index];

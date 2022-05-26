@@ -1,53 +1,167 @@
-
 <div class="container border border-success rounded caja">
-    <hr>
-<div class="d-flex justify-content-evenly">
-<h1>PROYECTOS</h1>
-        <!-- Button trigger modal -->
-        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
-            Launch static backdrop modal
-            </button>
-     
+  <hr>
+  <div class="d-flex justify-content-evenly">
+    <h1>PROYECTOS</h1>
+    <!-- Button trigger modal -->
+    <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#proyectoModal">
+      AGREGAR PROYECTO
+      <i class="fa-regular fa-circle-check"></i>
+    </button>
+
+    <!-- Modal -->
+    <div class="modal fade" id="proyectoModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+      aria-labelledby="proyectoModallLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="proyectoModalLabel">AGREGAR PROYECTO</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <form [formGroup]="newProyectoForm" (ngSubmit)="onSubmitProyecto()">
+
+
+              <div class="mb-3">
+                <label for="newNombreProyecto" class="form-label">Titulo del proyecto</label>
+                <input type="Text" formControlName="nombre" class="form-control" id="newNombreProyecto" required>
+              </div>
+
+              <div class="mb-3">
+                <label for="newFechaRealizacion" class="form-label">FECHA DE REALIZACION</label>
+                <input type="Text" formControlName="fechaRealizacion" class="form-control" id="newFechaRealizacion"
+                  required>
+              </div>
+
+
+
+              <div class="mb-3">
+                <label for="newUrlProyecto" class="form-label">URL DEL PROYECTO</label>
+                <input type="Text" formControlName="urlProyecto" class="form-control" id="newUrlProyecto" required>
+              </div>
+
+
+              <div class="mb-3">
+                <label for="newUrlImagenProyecto" class="form-label">URL IMAGEN DEL PROYECTO</label>
+                <input type="Text" formControlName="urlImagenProyecto" class="form-control" id="newUrlImagenProyecto"
+                  required>
+
+              </div>
+
+              <div class="mb-3">
+                <label for="newDescripcion" class="form-label">Descripcion</label>
+                <textarea formControlName="descripcion" class="form-control" id="newDescripcion" rows="2"
+                  required></textarea>
+
+              </div>
+
+              <button type="submit" class="btn btn-primary" data-bs-dismiss="modal">CREAR</button>
+
+
+            </form>
+
+
+          </div>
+          <div class="modal-footer">
+
+
+            <br>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+
+  <hr>
+  <div class="row d-flex justify-content-center ">
+    <div *ngFor="let proyect of proyectoList let i = index " class="card position-static " style="max-width: 18rem;">
+      <img src="{{proyect.urlImagenProyecto}}" class="card-img-top" alt="NOMBRE PROYECTO :{{proyect.nombre}}">
+      <div class="card-body ">
+        <h5>NOMBRE DEL PROYECTO:</h5>
+        <p class="card-text">{{proyect.nombre}}.</p>
+        <p class="card-text">{{proyect.descripcion}}. <br>
+
+          Fecha de lanzamiento {{proyect.fechaRealizacion}}.</p>
+        <div class="row d-flex justify-content-center">
+          <a href="{{proyect.urlProyecto}}" target="_blank" class="btn btn-primary">Ir al Proyecto</a>
+
+        </div>
+        <div class="row d-flex justify-content-center">
+          <!-- Button trigger modal -->
+          <button (click)="mostrarDatosProyecto(i)" type="button" class="btn btn-success" data-bs-toggle="modal"
+            data-bs-target="#proyectoEditModal">
+            EDITAR
+            <i class="fa-solid fa-wand-magic-sparkles"></i>
+          </button>
+
           <!-- Modal -->
-          <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-       <div class="modal-dialog">
-         <div class="modal-content">
-           <div class="modal-header">
-             <h5 class="modal-title" id="staticBackdropLabel">Modal title</h5>
-             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-           </div>
-           <div class="modal-body">
-             ...
-           </div>
-           <div class="modal-footer">
-             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-             <button type="button" class="btn btn-primary">Understood</button>
-           </div>
-         </div>
-       </div>
-     </div>
+          <div class="modal fade" id="proyectoEditModal" data-bs-backdrop="static" data-bs-keyboard="false"
+            tabindex="-1" aria-labelledby="proyectoEditModallLabel" aria-hidden="true">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="proyectoEditModalLabel">EDITAR PROYECTO</h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                  <form [formGroup]="editProyectoForm" (ngSubmit)="onSubmitEditProyecto()">
 
-</div>
-    
-    
-      <hr>
-            <div class="row d-flex justify-content-center ">
-               <div *ngFor="let proyect of proyectoList" class="card position-static " style="max-width: 18rem;">
-            <img src="{{proyect.urlImagenProyecto}}" class="card-img-top" alt="NOMBRE PROYECTO :{{proyect.nombre}}">
-            <div class="card-body"><h5>NOMBRE PROYECTO :{{proyect.nombre}}</h5>
-              <p class="card-text">{{proyect.descripcion}}.Realizado{{proyect.fechaRealizacion}}.</p>
-              <a href="{{proyect.urlProyecto}}" class="btn btn-primary">Ir al Proyecto</a>
+
+                    <div class="mb-3">
+                      <input type="hidden" formControlName="idProyecto" class="form-control" id="idProyecto">
+
+
+                      <label for="nombreProyecto" class="form-label">Titulo del proyecto</label>
+                      <input type="Text" formControlName="nombre" class="form-control" id="nombreProyecto" required>
+                    </div>
+
+                    <div class="mb-3">
+                      <label for="fechaRealizacion" class="form-label">FECHA DE REALIZACION</label>
+                      <input type="Text" formControlName="fechaRealizacion" class="form-control" id="fechaRealizacion"
+                        required>
+                    </div>
+
+
+
+                    <div class="mb-3">
+                      <label for="urlProyecto" class="form-label">URL DEL PROYECTO</label>
+                      <input type="Text" formControlName="urlProyecto" class="form-control" id="urlProyecto" required>
+                    </div>
+
+
+                    <div class="mb-3">
+                      <label for="urlImagenProyecto" class="form-label">URL IMAGEN DEL PROYECTO</label>
+                      <input type="Text" formControlName="urlImagenProyecto" class="form-control" id="urlImagenProyecto"
+                        required>
+
+                    </div>
+
+                    <div class="mb-3">
+                      <label for="descripcionProyecto" class="form-label">Descripcion</label>
+                      <textarea formControlName="descripcion" class="form-control" id="descripcionProyecto" rows="2"
+                        required></textarea>
+
+                    </div>
+
+                    <button type="submit" class="btn btn-primary " data-bs-dismiss="modal">EDITAR</button>
+
+
+                  </form>
+                </div>
+                <div class="modal-footer">
+                  <br>
+                </div>
+              </div>
             </div>
-          </div>   
-            </div>
-          
-
-
-
-      <hr>
-       
-           
+          </div>
+        </div>
+        <div class="row d-flex justify-content-center">
+          <button (click)="borrarProyecto(i)" class="btn btn-danger" data-bs-dismiss="modal">Borrar</button>
+   
+        </div>
+           </div>
+    </div>
+  </div>
+  <hr>
 </div>
-
-
-

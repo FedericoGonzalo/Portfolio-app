@@ -4,6 +4,7 @@ import { Observable } from 'rxjs';
 import { Experiencia } from '../modelos/experiencia';
 import { HardSkill } from '../modelos/hardSkill';
 import { Persona } from '../modelos/persona';
+import { Proyecto } from '../modelos/proyecto';
 import { Skill } from '../modelos/skill';
 
 
@@ -20,7 +21,7 @@ constructor(private http:HttpClient) { }
 
 
 
-
+//Persona si da tiempo hago que reciba solo dto
 
 
 obtenerDatos():Observable<any>{
@@ -72,6 +73,18 @@ agregarSoftSkill(softSkill:Skill):Observable<Skill>{
 borrarSoftSkill(idSkill:number){
   return this.http.delete<any>(this.URL+ 'api/personas/persona/ver/delSkill/'+idSkill);
 }
-//
+//PROYECTOS
+obtenerProyectos():Observable<any>{
+  return this.http.get<any>(this.URL+ 'api/personas/persona/ver/1/listaProyecto');
+}
+agregarProyecto(proyecto:Proyecto):Observable<Proyecto>{
+  return this.http.post<Proyecto>(this.URL+'api/personas/persona/ver/1/newProyecto',proyecto)
+}
+borrarProyecto(idProyecto:number){
+  return this.http.delete<any>(this.URL+ 'api/personas/persona/ver/delProyecto/'+idProyecto);
+}
+editarProyecto(proyecto:Proyecto):Observable<Proyecto>{
+  return this.http.put<Proyecto>(this.URL+ 'api/personas/persona/ver/1/listaProyectoEdit',proyecto);
+}
 
 }
