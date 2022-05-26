@@ -4,6 +4,7 @@ import { Observable } from 'rxjs';
 import { Experiencia } from '../modelos/experiencia';
 import { HardSkill } from '../modelos/hardSkill';
 import { Persona } from '../modelos/persona';
+import { Skill } from '../modelos/skill';
 
 
 
@@ -61,5 +62,16 @@ agregarHardSkill(hardSkill:HardSkill):Observable<Experiencia>{
 borrarHardSkill(idHardSkill:number){
   return this.http.delete<any>(this.URL+ 'api/personas/persona/ver/delHSkill/'+idHardSkill);
 }
+//SOFT SKILLS
+obtenerSoftSkills():Observable<any>{
+  return this.http.get<any>(this.URL+'api/personas/persona/ver/1/listSkill')
+}
+agregarSoftSkill(softSkill:Skill):Observable<Skill>{
+  return this.http.post<Skill>(this.URL+ 'api/personas/persona/ver/1/newSkill',softSkill);
+}
+borrarSoftSkill(idSkill:number){
+  return this.http.delete<any>(this.URL+ 'api/personas/persona/ver/delSkill/'+idSkill);
+}
+//
 
 }

@@ -123,21 +123,24 @@
          <div class="modal-dialog">
            <div class="modal-content">
              <div class="modal-header">
-               <h5 class="modal-title" id="softSkillsModalLabel">Gonzalo</h5>
+               <h5 class="modal-title" id="softSkillsModalLabel">AGREGAR SOFT-SKILL</h5>
                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
              </div>
              <div class="modal-body">
-              <form >
-
-                <button type="submit" class="btn btn-primary" data-bs-dismiss="modal">Understood</button>
+              <form [formGroup]="softSkillForm" (ngSubmit)="onSubmitSoftSkill()">
+                <div class="input-group mb-3">
+                  <input type="text" formControlName="nombreSkill" class="form-control" placeholder="TITULO DE SOFT-SKILL" aria-label="Recipient's username" aria-describedby="button-addon2">
+                  <button class="btn btn-primary" type="submit" id="button-addon2"data-bs-dismiss="modal">Agregar</button>
+                </div>
+              
                </form>
                
                 
                </div>
                <div class="modal-footer">
-              <br>
-              <br>
-                 
+            
+          
+                 <br>
                </div>
            </div>
          </div>
@@ -152,11 +155,11 @@
 
 <hr>
  <hr>
-<!--
+
 <div class="row d-flex justify-content-center ">
-  <div *ngFor="let softList of skillsList" id="softSkills" style="max-width: 18rem;">
+  <div *ngFor="let softSkill of softSkillsList  let m = index" id="softSkills ," style="max-width: 18rem;">
 <br>
-    <button type="button" class="btn btn-success"> <span>{{softList.nombreSkill}}&nbsp;</span>  <i  class="fa-solid fa-circle-xmark"></i></button>
+    <button (click)="borrarSoftSkill(m)" type="button" class="btn btn-success"> <span>{{softSkill.nombreSkill}}&nbsp; &nbsp;</span>  <i  class="fa-solid fa-circle-xmark"></i></button>
 <br>
 
 </div>
@@ -167,7 +170,7 @@
 
 
 
--->
+
 
 
 

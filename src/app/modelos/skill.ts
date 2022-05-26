@@ -1,5 +1,5 @@
 export interface Skill {
 
-    idSkill?:number;
+    idSkill:number;
     nombreSkill: String;
 }
