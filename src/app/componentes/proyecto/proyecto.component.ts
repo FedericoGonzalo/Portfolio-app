@@ -19,7 +19,7 @@ editProyectoForm:FormGroup;
               nombre: ['TITULO', [Validators.required]],
               fechaRealizacion:  ['9/5/1945', [Validators.required]],
               descripcion: ['DESCRIPCION DEL PROYECTO', [Validators.required]],
-              urlProyecto: ['https://www.google.com/', [Validators.required]],
+              urlProyecto: ['https://www.youtube.com/watch?v=U06jlgpMtQs&ab_channel=rascrifice', [Validators.required]],
               urlImagenProyecto: ['https://p4.wallpaperbetter.com/wallpaper/279/539/729/grumpy-cat-anime-cat-random-access-memories-wallpaper-preview.jpg', [Validators.required]],
 
              });
@@ -58,25 +58,13 @@ this.datosPortFolio.editarProyecto(this.editProyectoForm.value).subscribe(data=>
 this.ngOnInit();
 })
 }
-mostrarDatosProyecto(index:number)
-{
-  
-
-  this.editProyectoForm.get("idProyecto")?.setValue(this.proyectoList[index].idProyecto);
+mostrarDatosProyecto(index:number){
+   this.editProyectoForm.get("idProyecto")?.setValue(this.proyectoList[index].idProyecto);
   this.editProyectoForm.get("nombre")?.setValue(this.proyectoList[index].nombre);
-  this.editProyectoForm.get(" fechaRealizacion")?.setValue(this.proyectoList[index].fechaRealizacion);
+  this.editProyectoForm.get("fechaRealizacion")?.setValue(this.proyectoList[index].fechaRealizacion);
   this.editProyectoForm.get("descripcion")?.setValue(this.proyectoList[index].descripcion);
   this.editProyectoForm.get("urlProyecto")?.setValue(this.proyectoList[index]. urlProyecto);
   this.editProyectoForm.get("urlImagenProyecto")?.setValue(this.proyectoList[index].urlImagenProyecto);
-
-/* this.editProyectoForm.setValue({
-    idProyecto:this.proyecto.idProyecto,
-    nombre:proyecto.nombre,
-    fechaRealizacion:proyecto.fechaRealizacion,
-    descripcion:proyecto.descripcion,
-    urlProyecto:proyecto.urlProyecto,
-    urlImagenProyecto:proyecto.urlImagenProyecto,
-  })*/
 }
 
 borrarProyecto(index:number){

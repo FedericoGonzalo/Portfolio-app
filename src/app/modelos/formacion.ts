@@ -1,5 +1,5 @@
 export interface Formacion {
-    idFormacion?:number;
+    idFormacion:number;
     nombreTitulo: String;
     nombreInstituto: String;
     fechaInicio: String;
