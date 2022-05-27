@@ -16,17 +16,18 @@ import { PortfolioService } from 'src/app/servicios/portfolio.service';
 
 export class ExperienciaComponent implements OnInit {
 
-  experienciaList: Experiencia[] = [];
+  experienciaList:Experiencia[]=[];
 
-  expeForm: FormGroup;
-
+  expeNewForm: FormGroup;
+  expeEditForm: FormGroup;
 
   constructor(private datosPortfolio: PortfolioService,
-    private formBuilder: FormBuilder) {
+    private newExperienciaBuilder: FormBuilder,
+    private editExperienciaBuilder: FormBuilder,) {
 
 
-    this.expeForm = this.formBuilder.group({
-      idExperiencia: [''],
+    this.expeNewForm = this. newExperienciaBuilder.group({
+     
       puesto: ['', [Validators.required]],
       descripcion: ['', [Validators.required]],
       empresa: ['', [Validators.required]],
@@ -38,6 +39,16 @@ export class ExperienciaComponent implements OnInit {
 
     });
 
+    this.expeEditForm=this.editExperienciaBuilder.group({
+    idExperiencia: [''],
+    puesto: ['', [Validators.required]],
+    descripcion: ['', [Validators.required]],
+    empresa: ['', [Validators.required]],
+    fechaInicio: ['', [Validators.required]],
+    fechaFin: ['', [Validators.required]],
+    logoEmpresa: ['', [Validators.required]]
+});
+   
 
 
   }
@@ -52,26 +63,16 @@ export class ExperienciaComponent implements OnInit {
 
 
 
-  vaciarForm() {
-    this.expeForm.setValue({
-
-      idExperiencia: '',
-      puesto: '',
-      descripcion: '',
-      empresa: '',
-      fechaInicio: '',
-      fechaFin: ''
-
-    })
-  }
-  cargarEditForm(experiencia: Experiencia) {
-    this.expeForm.get("idExperiencia")?.setValue(experiencia.idExperiencia);
-    this.expeForm.get("puesto")?.setValue(experiencia.puesto);
-    this.expeForm.get("descripcion")?.setValue(experiencia.descripcion);
-    this.expeForm.get(" empresa")?.setValue(experiencia. empresa);
-    this.expeForm.get(" fechaInicio")?.setValue(experiencia. fechaInicio);
-    this.expeForm.get("fechaFin")?.setValue(experiencia.fechaFin);
-    this.expeForm.get("logoEmpresa")?.setValue(experiencia.logoEmpresa);
+  
+  cargarEditForm(index:number) {
+    
+    this.expeEditForm.get("idExperiencia")?.setValue(this.experienciaList[index].idExperiencia);
+    this.expeEditForm.get("puesto")?.setValue(this.experienciaList[index].puesto);
+    this.expeEditForm.get("descripcion")?.setValue(this.experienciaList[index].descripcion);
+    this.expeEditForm.get("empresa")?.setValue(this.experienciaList[index].empresa);
+    this.expeEditForm.get("fechaInicio")?.setValue(this.experienciaList[index].fechaInicio);
+    this.expeEditForm.get("fechaFin")?.setValue(this.experienciaList[index].fechaFin);
+    this.expeEditForm.get("logoEmpresa")?.setValue(this.experienciaList[index].logoEmpresa);
    
 
 
@@ -81,44 +82,37 @@ export class ExperienciaComponent implements OnInit {
 
 
   onSubmitNew() {
-    let experiencia: Experiencia = this.expeForm.value;
+  
 
-    this.datosPortfolio.agregarExperiencia(experiencia).subscribe(
+    this.datosPortfolio.agregarExperiencia(this.expeNewForm.value).subscribe(
       () => {
-        this.ngOnInit;
+        location.reload();
       }
     );
   }
 
 
 
-  onSubmit() {
-    let experiencia: Experiencia = this.expeForm.value;
+  onSubmitEdit() {
+    
 
-    this.datosPortfolio.editarExperiencia(experiencia).subscribe(() => {
-      this.ngOnInit;
+    this.datosPortfolio.editarExperiencia(this.expeEditForm.value).subscribe(() => {
+      location.reload();
     }
     );
 
   }
 
 
-  onNuevaExperiencia() {
-    this.vaciarForm();
-  }
+  
 
+ 
 
-
-  onEditExperiencia(index: number) {
-    let experiencia: Experiencia = this.experienciaList[index];
-    this.cargarEditForm(experiencia);
-  }
-
-  onDelExperiencia(index: number) {
+  borrarExperiencia(index: number) {
     let experiencia: Experiencia = this.experienciaList[index];
     if (confirm("¿Está seguro que desea borrar la experiencia seleccionada?")) {
       this.datosPortfolio.borrarExperiencia(experiencia.idExperiencia).subscribe((data) => {
-        this.ngOnInit;
+        location.reload();
       }
       );
   

@@ -8,6 +8,12 @@ import { PortfolioService } from 'src/app/servicios/portfolio.service';
   templateUrl: './educacion.component.html',
   styleUrls: ['./educacion.component.css']
 })
+
+
+
+
+
+
 export class EducacionComponent implements OnInit {
  formacionList:Formacion[]=[];
  newFormacionForm:FormGroup;
@@ -16,6 +22,8 @@ export class EducacionComponent implements OnInit {
   constructor(private datosPortfolio:PortfolioService,
               private newFormacionBuilder:FormBuilder,
               private editFormacionBuilder:FormBuilder,) { 
+                
+                
                 this.newFormacionForm=this.newFormacionBuilder.group({
                   nombreTitulo:['TITULO', [Validators.required]],
                   nombreInstituto: ['INSTIUTO', [Validators.required]],

@@ -1,65 +1,80 @@
 <div class="container border border-success rounded caja">
   <hr>
-  <div class="d-flex justify-content-evenly">
-    <h1>EXPERIENCIAS LABORALES</h1>
+  <div class="d-flex justify-content-evenly container border border-success rounded caja">
+    <h1>EXPERIENCIAS </h1>
+    
+    <!-- Button trigger modal -->
+    <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#experienciaNewModal">
+      AGREGAR EXPERIENCIA
+      <i class="fa-regular fa-circle-check"></i>
+    </button>
 
+    <!-- Modal -->
+    <div class="modal fade" id="experienciaNewModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+      aria-labelledby="experienciaNewModallLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="experienciaNewModalLabel">AGREGAR EXPERIENCIA</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <form [formGroup]="expeNewForm" (ngSubmit)="onSubmitNew()" class="row g-3">
+              <input type="hidden" name="idExperiencia" formControlName="idExperiencia">
+              <input type="hidden" name="logoEmpresa" formControlName="logoEmpresa">
+    
+              <div class="col-auto">
+                <label for="inputEmpresa" class="form-label">EMPRESA</label>
+                <input type="text" formControlName="empresa" class="form-control" id="inputEmpresa" placeholder="Empresa">
+    
+              </div>
+    
+    
+              <div class="col-auto">
+                <label for="inputPuesto" class="form-label">PUESTO</label>
+                <input type="text " formControlName="puesto" class="form-control" id="inputPuesto" placeholder="Puesto">
+              </div>
+    
+              <div class="col-auto">
+                <label for="inputDescripcion" class="form-label">DESCRIPCION</label>
+                <input type="text" formControlName="descripcion" class="form-control" id="inputDescripcion"
+                  placeholder="Descripcion">
+    
+              </div>
+    
+    
+    
+              <div class="col-auto">
+                <label for="inputFechaInicio" class="form-label">FECHA INICIO</label>
+                <input type="text" formControlName="fechaInicio" class="form-control" id="inputFechaInicio"
+                  placeholder="dd/mm/yyyy">
+    
+              </div>
+    
+              <div class="col-auto">
+                <label for="inputFechaFin" class="form-label">FECHA FINALIZACION</label>
+                <input type="text" formControlName="fechaFin" class="form-control" id="inputUrlResidencia"
+                  placeholder="dd/mm/yyyy">
+    
+              </div>
+    
+    
+              <div class="col-auto">
+                <button type="submit" class="btn btn-primary mb-3" data-bs-dismiss="modal">Nueva Experiencia</button>
+              </div>
+    
+            </form>
 
-    <div class="dropright">
-      <button (click)="onNuevaExperiencia()" class="btn btn-success dropdown-toggle" type="button"
-        id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-        Crear nueva EXPERIENCIA
-      </button>
-      <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-
-        <form [formGroup]="expeForm" (ngSubmit)="onSubmitNew()" class="row g-3">
-          <input type="hidden" name="idExperiencia" formControlName="idExperiencia">
-          <input type="hidden" name="logoEmpresa" formControlName="logoEmpresa">
-
-          <div class="col-auto">
-            <label for="inputEmpresa" class="form-label">EMPRESA</label>
-            <input type="text" formControlName="empresa" class="form-control" id="inputEmpresa" placeholder="Empresa">
 
           </div>
+          <div class="modal-footer">
 
 
-          <div class="col-auto">
-            <label for="inputPuesto" class="form-label">PUESTO</label>
-            <input type="text " formControlName="puesto" class="form-control" id="inputPuesto" placeholder="Puesto">
+            <br>
           </div>
-
-          <div class="col-auto">
-            <label for="inputDescripcion" class="form-label">DESCRIPCION</label>
-            <input type="text" formControlName="descripcion" class="form-control" id="inputDescripcion"
-              placeholder="Descripcion">
-
-          </div>
-
-
-
-          <div class="col-auto">
-            <label for="inputFechaInicio" class="form-label">FECHA INICIO</label>
-            <input type="text" formControlName="fechaInicio" class="form-control" id="inputFechaInicio"
-              placeholder="dd/mm/yyyy">
-
-          </div>
-
-          <div class="col-auto">
-            <label for="inputFechaFin" class="form-label">FECHA FINALIZACION</label>
-            <input type="text" formControlName="fechaFin" class="form-control" id="inputUrlResidencia"
-              placeholder="dd/mm/yyyy">
-
-          </div>
-
-
-          <div class="col-auto">
-            <button type="submit" class="btn btn-primary mb-3" data-bs-dismiss="modal">Nueva Experiencia</button>
-          </div>
-
-        </form>
-
-      </ul>
+        </div>
+      </div>
     </div>
-
 
 
 
@@ -72,7 +87,7 @@
   <div>
 
     <hr>
-    <div *ngFor="let expLab of experienciaList; let i = index">
+    <div *ngFor="let expLab of experienciaList let i = index">
       <hr>
 
       <div class="d-flex justify-content-around">
@@ -81,94 +96,120 @@
         </div>
         <div id="empresPuesto">
           <h2>{{expLab.empresa}}</h2>
-          <h5>Puesto Ocupado: <h6>{{expLab.puesto}}</h6>
-          </h5>
+         <h6>PUESTO <br>{{expLab.puesto}}</h6>
+         
         </div>
         <div id="descripcion">
-          <h6>BREVE DESCRIPCION</h6>
+          <h6> DESCRIPCION</h6>
           <p>{{expLab.descripcion}}</p>
         </div>
 
         <div id="fechasExper">
-          <h6>Fecha Inicio {{expLab.fechaInicio}}
+          <h6> Inicio {{expLab.fechaInicio}}
             <br>
-            Fecha Finalizacion {{expLab.fechaFin}}
+             Finalizacion {{expLab.fechaFin}}
           </h6>
         </div>
         <br>
         <div class="row">
           <hr>
+               <!-- Button trigger modal -->
+  <div class="row d-flex justify-content-center ">
+    <button type="button" (click)="cargarEditForm(i)" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#experienciaEditModal">
+  EDITAR 
+  <i class="fa-solid fa-wand-magic-sparkles"></i>
+</button><br>
 
+<button type="button" (click)="borrarExperiencia(i) " class="btn btn-danger" >
+BORRAR
+ <i class="fa-solid fa-trash-can"></i>
+</button>
 
-          <div class="dropright">
-            <button (click)="onEditExperiencia(i) " class="btn btn-success dropdown-toggle" type="button"
-              id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="true">
-              Edicion
-            </button>
-            <div class="row  dropdown-menu " aria-labelledby="dropdownMenuButton1">
-              <form [formGroup]="expeForm" (ngSubmit)="onSubmit() ">
+<!-- Modal -->
+<div class="modal fade" id="experienciaEditModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+  aria-labelledby="experienciaEditModallLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="experienciaEditModalLabel">EDITAR EXPERIENCIA</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form [formGroup]="expeEditForm" (ngSubmit)=" onSubmitEdit()">
 
-
-
-                <div>
-                  <input type="hidden" name="idExperiencia" formControlName="idExperiencia">
-
-                </div>
-
-                <div>
-                  <label for="puesto" class="form-label">PUESTO</label>
-                  <input type="text " class="form-control" id="puesto" placeholder="Puesto">
-                </div>
-
-                <div>
-                  <label for="descripcion" class="form-label">DESCRIPCION</label>
-                  <input type="text " class="form-control" id="descripcion" placeholder="Descripcion">
-                </div>
-
-                <div>
-                  <label for="empresa" class="form-label">EMPRESA</label>
-                  <input type="text " class="form-control" id="empresa" placeholder="Empresa">
-                </div>
-
-                <div>
-                  <label for="fechaInicio" class="form-label">INICIO</label>
-                  <input type="text " class="form-control" id="fechaInicio" placeholder="Fecha Inicio">
-                </div>
-
-                <div>
-                  <label for="fechaFin" class="form-label">FINALIZACION</label>
-                  <input type="text " class="form-control" id="fechaFin" placeholder="Fecha Finalizacion">
-                </div>
-
-                <div>
-                  <label for="logoEmpresa" class="form-label">LOGO EMPRESA</label>
-                  <input type="text " class="form-control" id="logoEmpresa" placeholder="URL LOGO EMPRESA">
-                </div>
-
-                <div>
-                  <label for="descripcion" class="form-label">DESCRIPCION</label>
-                  <input type="text " class="form-control" id="descripcion" placeholder="Descripcion">
-                </div>
-
-                <br>
-                <div class="row-auto">
-                  <button type="submit" class="btn btn-primary mb-3" data-bs-dismiss="modal">Editar</button>
-
-                </div>
-              </form>
-              <button (click)="onDelExperiencia(i)" class="btn btn-danger " data-bs-dismiss="modal">Borrar</button>
-
-            </div>
-
-
-
+          <div>
+            <input type="hidden" name="idExperiencia" formControlName="idExperiencia">
 
           </div>
 
+          <div>
+            <label for="puesto" class="form-label">PUESTO</label>
+            <input type="text"  formControlName="puesto" class="form-control" id="puesto" placeholder="Puesto">
+          </div>
+
+          <div>
+            <label for="descripcion" class="form-label">DESCRIPCION</label>
+            <input type="text"  formControlName="descripcion" class="form-control" id="descripcion" placeholder="Descripcion">
+          </div>
+
+          <div>
+            <label for="empresa" class="form-label">EMPRESA</label>
+            <input type="text"  formControlName="empresa" class="form-control" id="empresa" placeholder="Empresa">
+          </div>
+
+          <div>
+            <label for="fechaInicio" class="form-label">INICIO</label>
+            <input type="text" formControlName="fechaInicio"    class="form-control" id="fechaInicio" placeholder="Fecha Inicio">
+          </div>
+
+          <div>
+            <label for="fechaFin" class="form-label">FINALIZACION</label>
+            <input type="text" formControlName="fechaFin"  class="form-control" id="fechaFin" placeholder="Fecha Finalizacion">
+          </div>
+
+          <div>
+            <label for="logoEmpresa" class="form-label">LOGO EMPRESA</label>
+            <input type="text" formControlName="logoEmpresa" class="form-control" id="logoEmpresa" placeholder="URL LOGO EMPRESA">
+          </div>
+
+          <div>
+            <label for="descripcion" class="form-label">DESCRIPCION</label>
+            <input type="text " formControlName="descripcion" class="form-control" id="descripcion" placeholder="Descripcion">
+          </div>
+
           <br>
+          <div class="row-auto">
+            <button type="submit" class="btn btn-primary mb-3" data-bs-dismiss="modal">Editar</button>
+
+          </div>
+      
+        </form>
+
+
+      </div>
+      <div class="modal-footer">
+
+
+        <br>
+      </div>
+    </div>
+  </div>
+</div>
+   
+
+
+
+</div>
+
+
+
+
+<br>
 
           <hr>
           <br>
+       
+       
         </div>
 
         <hr>
