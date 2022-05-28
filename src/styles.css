@@ -3,27 +3,31 @@
 body {
     
   
-    background: linear-gradient(70deg, black, rgb(103, 165, 90));
+    background: linear-gradient(70deg, rgba(0, 0, 0, 0.322), rgb(103, 165, 90));
    
-   padding-top: 60px;
+   padding-top: 4rem;
    
    
   }
   .caja{
-     
-   margin-top: 25px;
+  font-family:monospace ; 
+   margin-top: 2rem;
  
    overflow: hidden;
   
    color:#f5deb3 ;
-   background: linear-gradient(195deg, black, rgb(103, 165, 90));
+   background: linear-gradient(195deg, rgba(0, 0, 0, 0.411), rgb(103, 165, 90));
   padding:0;  
    
 }
 
 
- .modal, .card {
+ .modal {
   color:black;
+  background-color: rgba(87, 175, 124, 0.267);
  }
 
+ .card {
  
+  background-color: rgba(10, 43, 24, 0.308);
+ }

@@ -1,142 +1,148 @@
 <div class="container border border-success rounded caja">
+
+  <img class="rounded-top border-bottom " id="headerImg" [src]="miPortfolio.imgHeaderUrl"
+    alt="Foto del susodicho header">
+  <img class=" border border-primary rounded-circle" id="fotoPerfil" [src]="miPortfolio.fotoUrl"
+    alt="Foto del susodicho perfil">
+  <h2 class="d-flex p-2">{{miPortfolio.nombre}} {{miPortfolio.apellido}}</h2>
+  <div class="d-flex justify-content-between">
+
     <div>
-      <img class="rounded-top border-bottom " id="headerImg" [src]="miPortfolio.imgHeaderUrl" alt="Foto del susodicho header">
+      <div class="d-flex flex-column">
+        <div class="d-flex p-2" id="acercaTexto">
+          <h6>{{miPortfolio.acercaTexto}} </h6>
 
-    </div> 
-     
+        </div>
 
-
-         <div >
-          <img class="border border-primary rounded-circle" id="fotoPerfil" [src]="miPortfolio.fotoUrl" alt="Foto del susodicho perfil">
-  
- </div>
- <div >
-    <div id="nombreUsario" class="d-flex justify">
-       <h1 id="nombre">{{miPortfolio.nombre}}</h1>
-       <span>&nbsp;&nbsp;</span>
-       <h1 id="apellido">{{miPortfolio.apellido}}</h1>
+        <div class="d-flex p-2" id="textoUser">
+          <h4>{{miPortfolio.textoUsuario}}</h4>
+        </div>
+      </div>
     </div>
 
+    <div id="infoLista">
+      <ul type="none">
 
-       <div class="d-flex justify-content-between">
-              <div class="d-flex flex-column">
-                     <div class="d-flex p-2" id="descripUser">
-                            <p>{{miPortfolio.acercaTexto}}
-                            </p>
-                     </div>
+        <li> <i class="fa-solid fa-location-dot"></i>
+          <a href="{{miPortfolio.urlResidencia}}" target="_blank">
+            Vivo en {{miPortfolio.residencia}}
 
-                     <div class="p-2" id="ubicacionUser">
-                            <p>{{miPortfolio.textoUsuario}}</p>
-                     </div>
-              </div>
-              <div id="infoLista">
-                     <ul type="none">
-                           
-                            <li>  <i class="fa-solid fa-location-dot"></i>
-                                   <a href="{{miPortfolio.urlResidencia}}" target="_blank"  >
-                                Vivo en  {{miPortfolio.residencia}}
+          </a>
+        </li>
+        <li> <i class="fa-solid fa-location-dot"></i>
 
-                                   </a></li>
-                                   <li>  <i class="fa-solid fa-location-dot"></i>
-                                         
-                                      Naci el  {{miPortfolio.nacimiento}}
-       
-                                          </li>
+          Naci el {{miPortfolio.nacimiento}}
 
-                     </ul>
-              </div>
- 
-       </div>
-      
-          <!-- Button trigger modal -->
-<button  (click)="mostrarDatosEncabezado()" type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#exampleModal">
-      EDITAR DATOS  <i class="fa-solid fa-wand-magic-sparkles"></i>
-     </button>
-     
-     <!-- Modal -->
-     <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" >
-       <div class="modal-dialog">
-         <div class="modal-content">
-           <div class="modal-header">
-             <h5 class="modal-title" id="exampleModalLabel">Edicion</h5>
-             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-           </div>
-           <div class="modal-body" >
-             <div class="edicionModal">
-             
-             
-             
+        </li>
+        <!-- Button trigger modal -->
+        <button (click)="mostrarDatosEncabezado()" type="button" class="btn btn-success" data-bs-toggle="modal"
+          data-bs-target="#encabezadoModal">
+          EDITAR DATOS <i class="fa-solid fa-wand-magic-sparkles"></i>
+        </button>
+
+      </ul>
+
+
+    </div>
+
+    <!-- Modal -->
+    <div class="modal fade" id="encabezadoModal" tabindex="-1" aria-labelledby="encabezadoModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="encabezadoModalLabel">Edicion</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <div class="edicionModal">
+
+
+
               <form [formGroup]="personaForm" (ngSubmit)="onSubmit()" class="row g-3">
-                     <div class="col-auto">
-                       <label for="inputNombre" class="form-label">NOMBRE</label>
-                       <input  type="text "  formControlName="nombre" class="form-control" id="inputNombre" placeholder="Nombre">
-                      </div>
-                   
-                     <div class="col-auto">
-                       <label for="inputApellido" class="form-label">APELLIDO</label>
-                      <input  type="text" formControlName="apellido"  class="form-control" id="inputApellido" placeholder="Apellido">
-                    
-                     </div>
-                
-                     <div class="col-auto">
-                       <label for="inputFoto" class="form-label">FOTO</label>
-                       <input  type="text" formControlName="fotoUrl"  class="form-control" id="inputFoto" placeholder="Foto URL">
-                    
-                     </div>
-                 
-                     <div class="col-auto">
-                       <label for="inputResidencia" class="form-label">NOMBRE CIUDAD</label>
-                       <input type="text" formControlName="residencia" class="form-control" id="inputResidencia" placeholder="Nombre en donde vivis">
-                    
-                     </div>
-                
-                     <div class="col-auto">
-                       <label for="inputUrlResidencia" class="form-label">Url GOOGLE MAPS</label>
-                       <input type="text" formControlName="urlResidencia" class="form-control" id="inputUrlResidencia" placeholder="Url de Google maps ">
-                    
-                     </div>
-                 
-                     <div class="col-auto">
-                       <label for="inputAcercaTexto"class="form-label">TEXTO ACERCA USUARIO</label>
-                       <input type="text" formControlName="acercaTexto" class="form-control" id="inputAcercaTexto" placeholder="Texto acerca usuario ">
-                    
-                     </div>
-                   
-                     <div class="col-auto">
-                       <label for="inputDescripAcercaTexto" class="form-label">Descripcion ACERCA USUARIO</label>
-                       <input type="text" formControlName="textoUsuario" class="form-control" id="inputDescripAcercaTexto" placeholder="Descripcion  usuario ">
-                    
-                     </div>
-                  
-                
-                   
-              
-                     <div class="col-auto">
-                       <label for="inputUrlImgHeader" class="form-label">IMG HEADER</label>
-                       <input type="text" formControlName="imgHeaderUrl" class="form-control" id="inputUrlImgHeader" placeholder="Imagen cabezera">
-                    
-                     </div>
+                <div class="col-auto">
+                  <label for="inputNombre" class="form-label">NOMBRE</label>
+                  <input type="text " formControlName="nombre" class="form-control" id="inputNombre"
+                    placeholder="Nombre">
+                </div>
+
+                <div class="col-auto">
+                  <label for="inputApellido" class="form-label">APELLIDO</label>
+                  <input type="text" formControlName="apellido" class="form-control" id="inputApellido"
+                    placeholder="Apellido">
+
+                </div>
+
+                <div class="col-auto">
+                  <label for="inputFoto" class="form-label">FOTO</label>
+                  <input type="text" formControlName="fotoUrl" class="form-control" id="inputFoto"
+                    placeholder="Foto URL">
+
+                </div>
+
+                <div class="col-auto">
+                  <label for="inputResidencia" class="form-label">NOMBRE CIUDAD</label>
+                  <input type="text" formControlName="residencia" class="form-control" id="inputResidencia"
+                    placeholder="Nombre en donde vivis">
+
+                </div>
+
+                <div class="col-auto">
+                  <label for="inputUrlResidencia" class="form-label">Url GOOGLE MAPS</label>
+                  <input type="text" formControlName="urlResidencia" class="form-control" id="inputUrlResidencia"
+                    placeholder="Url de Google maps ">
+
+                </div>
+
+                <div class="col-auto">
+                  <label for="inputAcercaTexto" class="form-label">TEXTO ACERCA USUARIO</label>
+                  <input type="text" formControlName="acercaTexto" class="form-control" id="inputAcercaTexto"
+                    placeholder="Texto acerca usuario ">
+
+                </div>
+
+                <div class="col-auto">
+                  <label for="inputDescripAcercaTexto" class="form-label">Descripcion ACERCA USUARIO</label>
+                  <input type="text" formControlName="textoUsuario" class="form-control" id="inputDescripAcercaTexto"
+                    placeholder="Descripcion  usuario ">
+
+                </div>
 
 
-                     
-                     <div class="col-auto">
-                      <label for="inputFechaNac"class="form-label">FECHA NAC</label>
-                      <input type="text" formControlName="nacimiento" class="form-control" id="inputFechaNac" placeholder="fecha nac ">
-                   
-                    </div>
-                     <div class="col-auto">
-                       <button   type="submit" class="btn btn-primary mb-3" data-bs-dismiss="modal">Confirma cambios</button>
-                     </div>
-                   </form>
-              
 
-             </div>
-           </div>
-          
-         </div>
-       </div>
-     </div>           
-            
-       
-</div>
+
+                <div class="col-auto">
+                  <label for="inputUrlImgHeader" class="form-label">IMG HEADER</label>
+                  <input type="text" formControlName="imgHeaderUrl" class="form-control" id="inputUrlImgHeader"
+                    placeholder="Imagen cabezera">
+
+                </div>
+
+
+
+                <div class="col-auto">
+                  <label for="inputFechaNac" class="form-label">FECHA NAC</label>
+                  <input type="text" formControlName="nacimiento" class="form-control" id="inputFechaNac"
+                    placeholder="fecha nac ">
+
+                </div>
+                <div class="row-auto">
+                  <button type="submit" class="btn btn-primary mb-3" data-bs-dismiss="modal">Confirma cambios</button>
+                </div>
+              </form>
+
+
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+
+
+
+
 </div>

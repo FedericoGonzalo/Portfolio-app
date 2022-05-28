@@ -1,5 +1,5 @@
  #headerImg{
-   height: 150px;
+   height: 10rem;
    width: 100%;
    
  
@@ -8,39 +8,32 @@
 
  #fotoPerfil{
   
-   height: 90px;
-   width: 90px;
-   margin-left: 20px;
-   margin-top: -50px;
+   height: 8rem;
+   width:8rem;
+   margin-left: 1.2rem;
+   margin-top: -3.5rem;
 
 
   
  }
  #fotoPerfil:hover{
-  height: 110px;
-  width: 110px;
+  height: 9rem;
+  width:9rem;
  }
 
  #icoConfigEncabezado:hover{
    opacity: 0.8;
  
 }
- #icoConfigEncabezado{
-  color: white;
-  margin: 0 8px;
-  font-size: 90%;
- }
+ 
 #infoLista{
-  padding-right: 20px;
+  padding-right: 5rem;
 }
- #infoLista img {
-  width:30px;
-  height:30px;
-}
+
  
 a{
   text-decoration: none;
-  color:aliceblue
+  color:#f5deb3 ;
 }
 h5{
   color: black;
@@ -48,4 +41,8 @@ h5{
 
 .edicionModal p{
   color: black;
+}
+#nombre{
+  display: flexbox;
+  margin-right: 2rem;
 }

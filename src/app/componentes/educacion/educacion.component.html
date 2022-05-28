@@ -1,5 +1,7 @@
 <div class="container border border-success rounded caja">
-  <hr>
+
+
+  <div class="container border border-success rounded caja"> </div>
   <div class="d-flex justify-content-evenly container border border-success rounded caja">
     <h1>FORMACION</h1>
     <!-- Button trigger modal -->
@@ -42,27 +44,28 @@
 
               <div class="mb-3">
                 <label for="newFechaFin" class="form-label">Fecha Fin</label>
-                <input type="Text" formControlName="fechaFin" class="form-control" id="newFechaFin"
-                  required>
+                <input type="Text" formControlName="fechaFin" class="form-control" id="newFechaFin" required>
 
               </div>
 
               <div class="mb-3">
                 <label for="newfinalizado" class="form-label">Finalizado</label>
-               
+
                 <div class="form-check">
-                  <input  formControlName="finalizado" class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="true" checked>
+                  <input formControlName="finalizado" class="form-check-input" type="radio" name="exampleRadios"
+                    id="exampleRadios1" value="true" checked>
                   <label class="form-check-label" for="exampleRadios1">
-                   SI
+                    SI
                   </label>
                 </div>
                 <div class="form-check">
-                  <input formControlName="finalizado" class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="false">
+                  <input formControlName="finalizado" class="form-check-input" type="radio" name="exampleRadios"
+                    id="exampleRadios2" value="false">
                   <label class="form-check-label" for="exampleRadios2">
                     NO
                   </label>
                 </div>
-              
+
 
               </div>
 
@@ -83,35 +86,34 @@
     </div>
   </div>
 
-  <hr>
+  <div class="container border border-success rounded caja"> </div>
+ 
 
-  <div  class="row d-flex justify-content-center ">
+  <div class="row d-flex justify-content-center ">
 
-  
 
-    <div  *ngFor="let formac of formacionList let i = index"  id="experiencias">
-      <hr>
 
-      <div class="d-flex justify-content-around">
-        
+    <div  *ngFor="let formac of formacionList let i = index" id="experiencias">
+
+
+      <div class="d-flex justify-content-around container border border-success rounded caja">
+
         <div id="titulo">
-        
-             Titulo
-          
-            <h2>
-              {{formac.nombreTitulo}}
-            </h2>
-             
-          
+
+          Titulo
+
+          <h2>
+            {{formac.nombreTitulo}}
+          </h2>
+
+
         </div>
         <div id="institucion">
           Institucion
           <h5>
             {{formac.nombreInstituto}}
           </h5>
-         
         </div>
-
         <div id="fechasExper">
           <h6>Fecha Inicio {{formac.fechaInicio}}
             <br>
@@ -120,131 +122,110 @@
         </div>
         <h4>Finalizado</h4>
         <div>
-
           <div [ngSwitch]="formac.finalizado">
             <i *ngSwitchCase="true" class="fa-solid fa-circle-check"></i>
             <i *ngSwitchCase="false" class="fa-solid fa-circle-xmark"></i>
           </div>
-
-
-
-
         </div>
-
-
         <div>
-        
+          <!-- Button trigger modal -->
+          <div class="row d-flex justify-content-center ">
+            <button type="button" (click)="mostrarDatosFormacion(i)" class="btn btn-success" data-bs-toggle="modal"
+              data-bs-target="#formacionEditModal">
+              EDITAR
+              <i class="fa-solid fa-wand-magic-sparkles"></i>
+            </button><br>
 
-
-
-    <!-- Button trigger modal -->
-  <div class="row d-flex justify-content-center ">
-        <button type="button" (click)="mostrarDatosFormacion(i)" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#formacionEditModal">
-      EDITAR 
-      <i class="fa-solid fa-wand-magic-sparkles"></i>
-    </button><br>
-
-  <button type="button" (click)="borrarFormacion(i)" class="btn btn-danger" >
-   BORRAR
-     <i class="fa-solid fa-trash-can"></i>
-    </button>
-  </div>
-
-    <!-- Modal -->
-    <div class="modal fade" id="formacionEditModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
-      aria-labelledby="formacionEditModallLabel" aria-hidden="true">
-      <div class="modal-dialog">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="formacionEditModalLabel">EDITAR FORMACION</h5>
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            <button type="button" (click)="borrarFormacion(i)" class="btn btn-danger">
+              BORRAR
+              <i class="fa-solid fa-trash-can"></i>
+            </button>
           </div>
-          <div class="modal-body">
-            <form [formGroup]="editFormacionForm" (ngSubmit)="onSubmitEditFormacion()">
-
-                <input type="hidden" formControlName="idFormacion" class="form-control">
-              <div class="mb-3">
-                <label for="newNombreTitulo" class="form-label">Titulo </label>
-                <input type="Text" formControlName="nombreTitulo" class="form-control" id="newNombreTitulo" required>
-              </div>
-
-              <div class="mb-3">
-                <label for="newNombreInstituto" class="form-label">Nombre Instituto</label>
-                <input type="Text" formControlName="nombreInstituto" class="form-control" id="newNombreInstituto"
-                  required>
-              </div>
-
-
-
-              <div class="mb-3">
-                <label for="newFechaInicio" class="form-label">Fecha Inicio</label>
-                <input type="Text" formControlName="fechaInicio" class="form-control" id="newFechaInicio" required>
-              </div>
-
-
-              <div class="mb-3">
-                <label for="newFechaFin" class="form-label">Fecha Fin</label>
-                <input type="Text" formControlName="fechaFin" class="form-control" id="newFechaFin"
-                  required>
-
-              </div>
-
-              <div class="mb-3">
-              
-                <label for="newfinalizado" class="form-label">Finalizado</label>
-                 <div class="form-check" formControlName="finalizado">
-               
-                  <input formControlName="finalizado"  class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="true">
-                  <label class="form-check-label" for="exampleRadios1">
-                   SI
-                  </label><br>
-                <input formControlName="finalizado" class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="false">
-                  <label class="form-check-label" for="exampleRadios2">
-                    NO
-                  </label>
-               
+          <!-- Modal -->
+          <div class="modal fade" id="formacionEditModal" data-bs-backdrop="static" data-bs-keyboard="false"
+            tabindex="-1" aria-labelledby="formacionEditModallLabel" aria-hidden="true">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="formacionEditModalLabel">EDITAR FORMACION</h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
-               
-              
+                <div class="modal-body">
+                  <form [formGroup]="editFormacionForm" (ngSubmit)="onSubmitEditFormacion()">
 
+                    <input type="hidden" formControlName="idFormacion" class="form-control">
+                    <div class="mb-3">
+                      <label for="newNombreTitulo" class="form-label">Titulo </label>
+                      <input type="Text" formControlName="nombreTitulo" class="form-control" id="newNombreTitulo"
+                        required>
+                    </div>
+
+                    <div class="mb-3">
+                      <label for="newNombreInstituto" class="form-label">Nombre Instituto</label>
+                      <input type="Text" formControlName="nombreInstituto" class="form-control" id="newNombreInstituto"
+                        required>
+                    </div>
+
+
+
+                    <div class="mb-3">
+                      <label for="newFechaInicio" class="form-label">Fecha Inicio</label>
+                      <input type="Text" formControlName="fechaInicio" class="form-control" id="newFechaInicio"
+                        required>
+                    </div>
+
+
+                    <div class="mb-3">
+                      <label for="newFechaFin" class="form-label">Fecha Fin</label>
+                      <input type="Text" formControlName="fechaFin" class="form-control" id="newFechaFin" required>
+
+                    </div>
+
+                    <div class="mb-3">
+
+                      <label for="newfinalizado" class="form-label">Finalizado</label>
+                      <div class="form-check" formControlName="finalizado">
+
+                        <input formControlName="finalizado" class="form-check-input" type="radio" name="exampleRadios"
+                          id="exampleRadios1" value="true">
+                        <label class="form-check-label" for="exampleRadios1">
+                          SI
+                        </label><br>
+                        <input formControlName="finalizado" class="form-check-input" type="radio" name="exampleRadios"
+                          id="exampleRadios2" value="false">
+                        <label class="form-check-label" for="exampleRadios2">
+                          NO
+                        </label>
+
+                      </div>
+
+
+
+                    </div>
+
+                    <button type="submit" class="btn btn-primary" data-bs-dismiss="modal">EDITAR </button>
+
+
+                  </form>
+
+
+                </div>
+                <div class="modal-footer">
+
+
+                  <br>
+                </div>
               </div>
-
-              <button type="submit" class="btn btn-primary" data-bs-dismiss="modal">EDITAR </button>
-
-
-            </form>
-
-
-          </div>
-          <div class="modal-footer">
-
-
-            <br>
+            </div>
           </div>
         </div>
       </div>
+   
+      
     </div>
-  
-  
-  </div>
-
-
-
-
-
-         
-        </div>
-
-        <hr>
-      </div>
-
-    </div>
-
-
 
   </div>
 
 
 
-
-
+</div>

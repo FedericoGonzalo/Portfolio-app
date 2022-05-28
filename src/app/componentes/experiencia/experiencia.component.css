@@ -3,10 +3,9 @@ img {
     height: 4rem;
     background-color: rgb(19, 107, 81);
     border-radius: 50%;
-    
+    display:flexbox;
+     margin-top: 1rem;
+  
     
 }
 
-#loopExp{
-    display: inline;
-}

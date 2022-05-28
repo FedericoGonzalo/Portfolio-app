@@ -1,5 +1,5 @@
 <div class="container border border-success rounded caja">
-  <hr>
+  <div class="container border border-success rounded caja"> </div>
   <div class="d-flex justify-content-evenly container border border-success rounded caja">
     <h1>EXPERIENCIAS </h1>
     
@@ -59,7 +59,7 @@
               </div>
     
     
-              <div class="col-auto">
+              <div class="row-auto">
                 <button type="submit" class="btn btn-primary mb-3" data-bs-dismiss="modal">Nueva Experiencia</button>
               </div>
     
@@ -75,20 +75,14 @@
         </div>
       </div>
     </div>
-
-
-
-
-
   </div>
+<div class="container border border-success rounded caja"> </div>
+  
 
-  <br>
-
-  <div>
-
-    <hr>
-    <div *ngFor="let expLab of experienciaList let i = index">
-      <hr>
+    <br>
+   <div *ngFor="let expLab of experienciaList let i = index">
+    <div  class="row-auto  container border border-success rounded caja">
+    
 
       <div class="d-flex justify-content-around">
         <div id="logoEmp">
@@ -112,7 +106,7 @@
         </div>
         <br>
         <div class="row">
-          <hr>
+        
                <!-- Button trigger modal -->
   <div class="row d-flex justify-content-center ">
     <button type="button" (click)="cargarEditForm(i)" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#experienciaEditModal">
@@ -204,18 +198,11 @@ BORRAR
 
 
 
-<br>
 
-          <hr>
-          <br>
-       
        
         </div>
-
-        <hr>
-        <br>
-        <hr>
-        <br>
+        
+       
       </div>
 
     </div>
