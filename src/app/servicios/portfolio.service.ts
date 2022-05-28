@@ -14,7 +14,7 @@ import { Skill } from '../modelos/skill';
   providedIn: 'root'
 })
 export class PortfolioService {
-URL='http://localhost:8080/';
+URL='https://tpobackendargprog.herokuapp.com/';
 
 
 
