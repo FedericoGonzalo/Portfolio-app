@@ -1,17 +1,24 @@
-<div class="container border border-success rounded caja">
-  <div><h1>Teoreticamenete hablando seria el log in </h1></div>
-  <form [formGroup]="form " class="m-5" (ngSubmit)="onEnviar($event)">
+<div class=" container border border-success rounded caja">
+ 
+    <div >
+       <h4>HOLA MI NOMBRE ES FEDERICO SUAREZ MARTIN </h4>
+       <h5>ESTE ES MI TRABAJO FINAL  </h5>
+       <h6>EL  USUARIO ES admin</h6>
+       <h6>EL  PASSWORD ES admin</h6>
+    </div>
+   <div>
+     <form [formGroup]="form " class="m-5" (ngSubmit)="onEnviar($event)">
     <div class="mb-3">
-      <label for="exampleInputEmail1" class="form-label">Correo Electronico</label>
+      <label for="exampleInputEmail1" class="form-label">Usuario</label>
       <input type="text" formControlName="nombreUsuario" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
       [ngClass]="{'is-invalid':nombreUsuario?.errors && nombreUsuario?.touched,
        'is-valid' :!nombreUsuario?.errors && nombreUsuario?.touched  }">    
       <div *ngIf="nombreUsuario?.errors && nombreUsuario?.touched">
         <p *ngIf="nombreUsuario?.hasError('requiered')" class="text-danger">
-          el mail es requerido guachin
+          el user es requerido 
         </p>
         <p *ngIf="nombreUsuario?.hasError('nombreUsuario')" class="text-danger">
-          Tenes que poner un U S E R  valide , entiendes mendez?
+          Tenes que poner un U S E R  valido
         </p>
       </div>
     </div>
@@ -22,10 +29,10 @@
        'is-valid' :!Password?.errors && Password?.touched  }">
       <div *ngIf="Password?.errors && Password?.touched">
         <p *ngIf="Password?.hasError('requiered')" class="text-danger">
-          el pasword es requerido guachin
+          el pasword es requerido 
         </p>
         <p *ngIf="Password?.hasError('minlength')" class="text-danger">
-          al menos 8 caracteres
+          al menos 4 caracteres
         </p>
 
     </div>
@@ -33,6 +40,10 @@
     <button type="submit" class="btn btn-primary">Enviar</button>
  
   </form>
+   </div>
+
+  
+<br>
 
 
 

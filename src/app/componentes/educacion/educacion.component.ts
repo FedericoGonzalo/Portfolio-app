@@ -81,7 +81,7 @@ borrarFormacion(index:number){
   if(confirm("¿Está seguro que desea borrar la Formacion seleccionado?")){
     this.datosPortfolio.borrarFormacion(formacion.idFormacion).subscribe((data) => {
 
-      this.ngOnInit();
+      location.reload();
     })
   }
 

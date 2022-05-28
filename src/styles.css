@@ -31,3 +31,11 @@ body {
  
   background-color: rgba(10, 43, 24, 0.308);
  }
+
+
+ .row{
+  row-gap: 5rem;
+  column-gap: 5rem;
+  display:flex ;
+  
+}

@@ -32,7 +32,7 @@
 
           Naci el {{miPortfolio?.nacimiento}}
 
-        </li>
+        </li><br>
         <!-- Button trigger modal -->
         <button (click)="mostrarDatosEncabezado()" type="button" class="btn btn-success" data-bs-toggle="modal"
           data-bs-target="#encabezadoModal">
@@ -57,74 +57,66 @@
 
 
 
-              <form [formGroup]="personaForm" (ngSubmit)="onSubmit()" class="row g-3">
-                <div class="col-auto">
+              <form [formGroup]="personaForm" (ngSubmit)="onSubmit()" >
+            
                   <label for="inputNombre" class="form-label">NOMBRE</label>
                   <input type="text " formControlName="nombre" class="form-control" id="inputNombre"
                     placeholder="Nombre">
-                </div>
-
-                <div class="col-auto">
+        
                   <label for="inputApellido" class="form-label">APELLIDO</label>
                   <input type="text" formControlName="apellido" class="form-control" id="inputApellido"
                     placeholder="Apellido">
 
-                </div>
-
-                <div class="col-auto">
+       
                   <label for="inputFoto" class="form-label">FOTO</label>
                   <input type="text" formControlName="fotoUrl" class="form-control" id="inputFoto"
                     placeholder="Foto URL">
 
-                </div>
-
-                <div class="col-auto">
+             
                   <label for="inputResidencia" class="form-label">NOMBRE CIUDAD</label>
                   <input type="text" formControlName="residencia" class="form-control" id="inputResidencia"
                     placeholder="Nombre en donde vivis">
 
-                </div>
-
-                <div class="col-auto">
+              
                   <label for="inputUrlResidencia" class="form-label">Url GOOGLE MAPS</label>
                   <input type="text" formControlName="urlResidencia" class="form-control" id="inputUrlResidencia"
                     placeholder="Url de Google maps ">
 
-                </div>
+               
 
-                <div class="col-auto">
+              
                   <label for="inputAcercaTexto" class="form-label">TEXTO ACERCA USUARIO</label>
                   <input type="text" formControlName="acercaTexto" class="form-control" id="inputAcercaTexto"
                     placeholder="Texto acerca usuario ">
 
-                </div>
+              
 
-                <div class="col-auto">
+               
                   <label for="inputDescripAcercaTexto" class="form-label">Descripcion ACERCA USUARIO</label>
                   <input type="text" formControlName="textoUsuario" class="form-control" id="inputDescripAcercaTexto"
                     placeholder="Descripcion  usuario ">
 
-                </div>
+                
 
 
 
 
-                <div class="col-auto">
+               
                   <label for="inputUrlImgHeader" class="form-label">IMG HEADER</label>
                   <input type="text" formControlName="imgHeaderUrl" class="form-control" id="inputUrlImgHeader"
                     placeholder="Imagen cabezera">
 
-                </div>
+              
 
 
 
-                <div class="col-auto">
+                
                   <label for="inputFechaNac" class="form-label">FECHA NAC</label>
                   <input type="text" formControlName="nacimiento" class="form-control" id="inputFechaNac"
                     placeholder="fecha nac ">
 
-                </div>
-                <div class="row-auto">
+              <br>
+                <div class="row">
                   <button type="submit" class="btn btn-primary mb-3" data-bs-dismiss="modal">Confirma cambios</button>
                 </div>
               </form>
