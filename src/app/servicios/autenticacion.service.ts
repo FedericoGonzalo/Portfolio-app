@@ -6,7 +6,7 @@ import { map } from 'rxjs/operators';
   providedIn: 'root'
 })
 export class AutenticacionService {
-  url="https://reqres.in/api/login";
+  url="http://localhost:8080/api/auth/login";
   currentUsersSubject:BehaviorSubject<any>;
   constructor(private http:HttpClient) { 
     console.log("el servicio de mno se que esta no se que");

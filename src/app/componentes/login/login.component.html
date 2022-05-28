@@ -3,14 +3,14 @@
   <form [formGroup]="form " class="m-5" (ngSubmit)="onEnviar($event)">
     <div class="mb-3">
       <label for="exampleInputEmail1" class="form-label">Correo Electronico</label>
-      <input type="email" formControlName="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
-      [ngClass]="{'is-invalid':Email?.errors && Email?.touched,
-       'is-valid' :!Email?.errors && Email?.touched  }">    
-      <div *ngIf="Email?.errors && Email?.touched">
-        <p *ngIf="Email?.hasError('requiered')" class="text-danger">
+      <input type="text" formControlName="nombreUsuario" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+      [ngClass]="{'is-invalid':nombreUsuario?.errors && nombreUsuario?.touched,
+       'is-valid' :!nombreUsuario?.errors && nombreUsuario?.touched  }">    
+      <div *ngIf="nombreUsuario?.errors && nombreUsuario?.touched">
+        <p *ngIf="nombreUsuario?.hasError('requiered')" class="text-danger">
           el mail es requerido guachin
         </p>
-        <p *ngIf="Email?.hasError('email')" class="text-danger">
+        <p *ngIf="nombreUsuario?.hasError('email')" class="text-danger">
           Tenes que poner un e m a i l  valide , entiendes mendez?
         </p>
       </div>

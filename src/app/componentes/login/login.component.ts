@@ -12,16 +12,16 @@ export class LoginComponent implements OnInit {
   form:FormGroup;
   constructor(private formBuilder:FormBuilder,private autenticationService:AutenticacionService, private ruta:Router ) { 
     this.form=this.formBuilder.group({
-      email:['',[Validators.required,Validators.email]],
-      password:['',[Validators.required,Validators.minLength(8)]],
+      nombreUsuario:['',[Validators.required]],
+      password:['',[Validators.required,Validators.minLength(4)]],
 
     })
   }
 
   ngOnInit(): void {
   }
-  get Email(){
-    return this.form.get('email');
+  get nombreUsuario(){
+    return this.form.get('nombreUsuario');
   
   }
   get Password (){
