@@ -81,43 +81,26 @@
 
     <br>
    <div *ngFor="let expLab of experienciaList let i = index">
-    <div  class="row-auto  container border border-success rounded caja">
-    
-
-      <div class="d-flex justify-content-around">
-        <div id="logoEmp">
-          <img src="{{expLab.logoEmpresa}}" alt="logo empresa">
-        </div>
-        <div id="empresPuesto">
-          <h2>{{expLab.empresa}}</h2>
-         <h6>PUESTO <br>{{expLab.puesto}}</h6>
-         
-        </div>
-        <div id="descripcion">
-          <h6> DESCRIPCION</h6>
-          <p>{{expLab.descripcion}}</p>
-        </div>
-
+   
+    <div class="card" style="width: 18rem;">
+      <img src="{{expLab.logoEmpresa}}" alt="logo empresa" class="card-img-top" >
+      <div class="card-body">
+        <h3 class="card-title">{{expLab.empresa}}</h3>
+        <h6 class="card-title">{{expLab.puesto}}</h6>
+        <p class="card-text">{{expLab.descripcion}}</p>
         <div id="fechasExper">
           <h6> Inicio {{expLab.fechaInicio}}
             <br>
              Finalizacion {{expLab.fechaFin}}
           </h6>
         </div>
-        <br>
-        <div class="row">
-        
-               <!-- Button trigger modal -->
-  <div class="row d-flex justify-content-center ">
-    <button type="button" (click)="cargarEditForm(i)" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#experienciaEditModal">
-  EDITAR 
-  <i class="fa-solid fa-wand-magic-sparkles"></i>
-</button><br>
-
-<button type="button" (click)="borrarExperiencia(i) " class="btn btn-danger" >
-BORRAR
- <i class="fa-solid fa-trash-can"></i>
-</button>
+        <button type="button" (click)="cargarEditForm(i)" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#experienciaEditModal">
+          EDITAR 
+          <i class="fa-solid fa-wand-magic-sparkles"></i>
+        </button>
+      </div>
+    </div>
+   
 
 <!-- Modal -->
 <div class="modal fade" id="experienciaEditModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
@@ -132,7 +115,7 @@ BORRAR
         <form [formGroup]="expeEditForm" (ngSubmit)=" onSubmitEdit()">
 
           <div>
-            <input type="hidden" name="idExperiencia" formControlName="idExperiencia">
+            <input type="hidden"  class="form-control" name="idExperiencia" formControlName="idExperiencia">
 
           </div>
 
@@ -166,15 +149,15 @@ BORRAR
             <input type="text" formControlName="logoEmpresa" class="form-control" id="logoEmpresa" placeholder="URL LOGO EMPRESA">
           </div>
 
-          <div>
-            <label for="descripcion" class="form-label">DESCRIPCION</label>
-            <input type="text " formControlName="descripcion" class="form-control" id="descripcion" placeholder="Descripcion">
-          </div>
+        
 
           <br>
-          <div class="row-auto">
-            <button type="submit" class="btn btn-primary mb-3" data-bs-dismiss="modal">Editar</button>
-
+          <div class="row">
+            <button type="submit" class="btn btn-primary mb-3" data-bs-dismiss="modal">Editar<i class="fa-solid fa-wand-magic-sparkles"></i></button>
+            <button type="button" (click)="borrarExperiencia(i) " class="btn btn-danger" >
+              Borrar
+               <i class="fa-solid fa-trash-can"></i>
+              </button>
           </div>
       
         </form>
@@ -203,16 +186,4 @@ BORRAR
         </div>
         
        
-      </div>
-
-    </div>
-
-
-
-  </div>
-
-
-
-
-
-</div>
+      

@@ -15,7 +15,8 @@ export class EncabezadoComponent implements OnInit {
   
    
   constructor(private datosPorfolio:PortfolioService,
-              private formBuilder: FormBuilder ) {
+              private formBuilder: FormBuilder,
+              ) {
              this.personaForm=this.formBuilder.group({
               
               nombre:  ['',[Validators.required]],
@@ -29,7 +30,7 @@ export class EncabezadoComponent implements OnInit {
               textoUsuario:  ['',[Validators.required]],
               
              });
-          this.miPortfolio;
+          
       
             }
  

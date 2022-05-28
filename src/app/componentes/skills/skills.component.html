@@ -55,13 +55,13 @@
    
    
     
-   
   
-  <div class="container border border-success rounded caja"> </div>
+  
+  
 
-  <div class="d-flex justify-content-around container border border-success rounded caja">
+  <div class=" container border border-success rounded caja">
 
-   <div  class="row"  *ngFor="let hardSkill of hardSkillsList let i = index"  id="hardSkills">
+   <span   *ngFor="let hardSkill of hardSkillsList let i = index"  id="hardSkills">
       
      
 
@@ -72,7 +72,7 @@
       [showSubtitle]="false"
       [subtitleColor]="'#f5deb3'"
       [percent]=" hardSkill.porcentajeHardSkill "
-      [radius]="100"
+      [radius]="70"
       [outerStrokeWidth]="16"
       [innerStrokeWidth]="8"
       [outerStrokeColor]="'#78C000'"
@@ -85,7 +85,7 @@
   <i (click)="borrarHardSkill(i)" class="fa-solid fa-circle-xmark"> </i>
  
 
-     </div>
+      </span>
        
       
 

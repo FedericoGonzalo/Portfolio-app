@@ -52,14 +52,14 @@
                 <label for="newfinalizado" class="form-label">Finalizado</label>
 
                 <div class="form-check">
-                  <input formControlName="finalizado" class="form-check-input" type="radio" name="exampleRadios"
+                  <input formControlName="finalizado" class="form-check-input" type="radio" name="finalizado"
                     id="exampleRadios1" value="true" checked>
                   <label class="form-check-label" for="exampleRadios1">
                     SI
                   </label>
                 </div>
                 <div class="form-check">
-                  <input formControlName="finalizado" class="form-check-input" type="radio" name="exampleRadios"
+                  <input formControlName="finalizado" class="form-check-input" type="radio" name="finalizado"
                     id="exampleRadios2" value="false">
                   <label class="form-check-label" for="exampleRadios2">
                     NO
@@ -119,13 +119,15 @@
             <br>
             Fecha Finalizacion {{formac.fechaFin}}
           </h6>
-        </div>
-        <h4>Finalizado</h4>
-        <div>
-          <div [ngSwitch]="formac.finalizado">
+      
+          <h6 [ngSwitch]="formac.finalizado">Finalizado  
             <i *ngSwitchCase="true" class="fa-solid fa-circle-check"></i>
             <i *ngSwitchCase="false" class="fa-solid fa-circle-xmark"></i>
-          </div>
+          </h6>
+        </div>
+       
+        <div> 
+         
         </div>
         <div>
           <!-- Button trigger modal -->
@@ -183,15 +185,16 @@
 
                     <div class="mb-3">
 
-                      <label for="newfinalizado" class="form-label">Finalizado</label>
-                      <div class="form-check" formControlName="finalizado">
+                      <label for="finalizado" class="form-label">Finalizado</label>
+                      <div class="form-check">
 
-                        <input formControlName="finalizado" class="form-check-input" type="radio" name="exampleRadios"
+                        <input formControlName="finalizado" class="form-check-input" type="radio" name="finalizado"
                           id="exampleRadios1" value="true">
                         <label class="form-check-label" for="exampleRadios1">
                           SI
-                        </label><br>
-                        <input formControlName="finalizado" class="form-check-input" type="radio" name="exampleRadios"
+                        </label>
+                        <br>
+                        <input formControlName="finalizado" class="form-check-input" type="radio" name="finalizado"
                           id="exampleRadios2" value="false">
                         <label class="form-check-label" for="exampleRadios2">
                           NO

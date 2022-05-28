@@ -26,7 +26,7 @@ constructor(private http:HttpClient) { }
 
 
 obtenerDatos():Observable<any>{
-    return this.http.get<any>(this.URL+'api/personas/persona/ver/1');
+    return this.http.get<Persona>(this.URL+'api/personas/persona/ver/1');
  
  
   

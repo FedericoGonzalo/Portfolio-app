@@ -27,7 +27,7 @@ export class ExperienciaComponent implements OnInit {
 
 
     this.expeNewForm = this. newExperienciaBuilder.group({
-     
+      idExperiencia: [''],
       puesto: ['', [Validators.required]],
       descripcion: ['', [Validators.required]],
       empresa: ['', [Validators.required]],

@@ -1,21 +1,20 @@
 <div class="container border border-success rounded caja">
-
-  <img class="rounded-top border-bottom " id="headerImg" [src]="miPortfolio.imgHeaderUrl"
+<img class="rounded-top border-bottom " id="headerImg" [src]='miPortfolio?.imgHeaderUrl'
     alt="Foto del susodicho header">
-  <img class=" border border-primary rounded-circle" id="fotoPerfil" [src]="miPortfolio.fotoUrl"
+  <img class=" border border-primary rounded-circle" id="fotoPerfil" [src]="miPortfolio?.fotoUrl"
     alt="Foto del susodicho perfil">
-  <h2 class="d-flex p-2">{{miPortfolio.nombre}} {{miPortfolio.apellido}}</h2>
+  <h2 class="d-flex p-2">{{miPortfolio?.nombre}} {{miPortfolio?.apellido}}</h2>
   <div class="d-flex justify-content-between">
 
     <div>
       <div class="d-flex flex-column">
         <div class="d-flex p-2" id="acercaTexto">
-          <h6>{{miPortfolio.acercaTexto}} </h6>
+          <h6>{{miPortfolio?.acercaTexto}} </h6>
 
         </div>
 
         <div class="d-flex p-2" id="textoUser">
-          <h4>{{miPortfolio.textoUsuario}}</h4>
+          <h4>{{miPortfolio?.textoUsuario}}</h4>
         </div>
       </div>
     </div>
@@ -24,14 +23,14 @@
       <ul type="none">
 
         <li> <i class="fa-solid fa-location-dot"></i>
-          <a href="{{miPortfolio.urlResidencia}}" target="_blank">
-            Vivo en {{miPortfolio.residencia}}
+          <a href="{{miPortfolio?.urlResidencia}}" target="_blank">
+            Vivo en {{miPortfolio?.residencia}}
 
           </a>
         </li>
         <li> <i class="fa-solid fa-location-dot"></i>
 
-          Naci el {{miPortfolio.nacimiento}}
+          Naci el {{miPortfolio?.nacimiento}}
 
         </li>
         <!-- Button trigger modal -->

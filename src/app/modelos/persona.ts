@@ -2,7 +2,7 @@
 
 export interface Persona{
  
-    
+    idPersona:number;
     nombre: String;
     apellido: String;
     residencia: String;
