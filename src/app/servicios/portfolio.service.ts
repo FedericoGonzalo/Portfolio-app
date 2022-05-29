@@ -14,7 +14,7 @@ import { Skill } from '../modelos/skill';
   providedIn: 'root'
 })
 export class PortfolioService {
-URL='https://tpobackendargprog.herokuapp.com/';
+URL=' https://beargprog.herokuapp.com/';
 
 
 
@@ -33,7 +33,7 @@ obtenerDatos():Observable<any>{
   }
 
 editPersona(persona:Persona):Observable<any>{
- return this.http.put<any>(this.URL+ 'api/personas/persona/editar/1',persona);
+ return this.http.put<Persona>(this.URL+ 'api/personas/persona/editar/1',persona);
 }
 
 

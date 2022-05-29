@@ -59,20 +59,20 @@
   
   
 
-  <div class=" container border border-success rounded caja">
+  <div class="row   container border border-success rounded caja">
 
-   <span   *ngFor="let hardSkill of hardSkillsList let i = index"  id="hardSkills">
+   <span  *ngFor="let hardSkill of hardSkillsList let i = index"  id="hardSkills">
       
      
 
   <circle-progress 
       [title]=" hardSkill.nombreHardSkill +' '+ hardSkill.porcentajeHardSkill +' %'"
-      [titleColor]=" '#f5deb3' "
+      [titleColor]=" 'white' "
       [showUnits]="false"
       [showSubtitle]="false"
-      [subtitleColor]="'#f5deb3'"
+      [subtitleColor]="'white'"
       [percent]=" hardSkill.porcentajeHardSkill "
-      [radius]="70"
+      [radius]="85"
       [outerStrokeWidth]="16"
       [innerStrokeWidth]="8"
       [outerStrokeColor]="'#78C000'"
