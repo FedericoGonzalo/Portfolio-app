@@ -17,7 +17,7 @@ editProyectoForm:FormGroup;
               private editFormBuilder: FormBuilder,) { 
              this.newProyectoForm=this.newFormBuilder.group({
               nombre: ['TITULO', [Validators.required]],
-              fechaRealizacion:  ['9/5/1945', [Validators.required]],
+              fechaRealizacion:  ['', [Validators.required]],
               descripcion: ['DESCRIPCION DEL PROYECTO', [Validators.required]],
               urlProyecto: ['https://www.youtube.com/watch?v=U06jlgpMtQs&ab_channel=rascrifice', [Validators.required]],
               urlImagenProyecto: ['https://p4.wallpaperbetter.com/wallpaper/279/539/729/grumpy-cat-anime-cat-random-access-memories-wallpaper-preview.jpg', [Validators.required]],

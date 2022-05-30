@@ -27,8 +27,8 @@ export class EducacionComponent implements OnInit {
                 this.newFormacionForm=this.newFormacionBuilder.group({
                   nombreTitulo:['TITULO', [Validators.required]],
                   nombreInstituto: ['INSTIUTO', [Validators.required]],
-                  fechaInicio:['10/10/22', [Validators.required]],
-                  fechaFin: ['10/10/22', [Validators.required]],
+                  fechaInicio:['', [Validators.required]],
+                  fechaFin: ['', [Validators.required]],
                   finalizado: ['', [Validators.required]],
                 });
                 this.editFormacionForm=this.editFormacionBuilder.group({
