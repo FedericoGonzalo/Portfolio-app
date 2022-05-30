@@ -6,6 +6,7 @@ import { map } from 'rxjs/operators';
   providedIn: 'root'
 })
 export class AutenticacionService {
+ // url=" http://localhost:8080/api/auth/login";
   url=" https://beargprog.herokuapp.com/api/auth/login";
   currentUsersSubject:BehaviorSubject<any>;
   constructor(private http:HttpClient) { 

@@ -16,6 +16,7 @@ import { Skill } from '../modelos/skill';
 export class PortfolioService {
 URL=' https://beargprog.herokuapp.com/';
 
+//URL=' http://localhost:8080/';
 
 
 constructor(private http:HttpClient) { }

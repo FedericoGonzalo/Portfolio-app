@@ -22,7 +22,7 @@ export class SkillsComponent implements OnInit {
               ) {
      
       this.hardSkillForm = this.formBuilder.group({
-      porcentajeHardSkill: ['', [Validators.required]],
+      porcentajeHardSkill: ['', [Validators.required, Validators.max(100)]],
       nombreHardSkill: ['', [Validators.required]],
       });
       this.softSkillForm=this.formBuilder2.group({
