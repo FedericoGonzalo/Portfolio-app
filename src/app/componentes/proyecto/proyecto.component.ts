@@ -46,7 +46,7 @@ editProyectoForm:FormGroup;
 onSubmitProyecto(){
   this.datosPortFolio.agregarProyecto(this.newProyectoForm.value).subscribe(data=>{
    console.log(this.newProyectoForm.value),
-   location.reload();
+   this.ngOnInit();
 })
 }
 

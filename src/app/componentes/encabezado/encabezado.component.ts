@@ -60,7 +60,7 @@ export class EncabezadoComponent implements OnInit {
    
  this.datosPorfolio.editPersona(this.personaForm.value) .subscribe(data=>{
   console.log(this.personaForm.value);
-  location.reload();
+  this.ngOnInit();
   });   ;
     }
   

@@ -55,14 +55,14 @@ export class EducacionComponent implements OnInit {
 onSubmitFormacion(){
   this.datosPortfolio.agregarFormacion(this.newFormacionForm.value).subscribe(data=>{
     console.log(this.newFormacionForm.value),
-    location.reload();
+    this.ngOnInit();
  })
 
 }
 onSubmitEditFormacion(){
   this.datosPortfolio.editarFormacion(this.editFormacionForm.value).subscribe(data=>{
     console.log(this.newFormacionForm.value),
-    location.reload();
+    this.ngOnInit();
  })
 
 }
@@ -81,7 +81,7 @@ borrarFormacion(index:number){
   if(confirm("¿Está seguro que desea borrar la Formacion seleccionado?")){
     this.datosPortfolio.borrarFormacion(formacion.idFormacion).subscribe((data) => {
 
-      location.reload();
+      this.ngOnInit();
     })
   }
 

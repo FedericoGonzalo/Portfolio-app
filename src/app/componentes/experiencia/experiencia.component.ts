@@ -86,7 +86,7 @@ export class ExperienciaComponent implements OnInit {
 
     this.datosPortfolio.agregarExperiencia(this.expeNewForm.value).subscribe(
       () => {
-        location.reload();
+        this.ngOnInit();
       }
     );
   }
@@ -97,7 +97,7 @@ export class ExperienciaComponent implements OnInit {
     
 
     this.datosPortfolio.editarExperiencia(this.expeEditForm.value).subscribe(() => {
-      location.reload();
+      this.ngOnInit();
     }
     );
 
@@ -112,7 +112,7 @@ export class ExperienciaComponent implements OnInit {
     let experiencia: Experiencia = this.experienciaList[index];
     if (confirm("¿Está seguro que desea borrar la experiencia seleccionada?")) {
       this.datosPortfolio.borrarExperiencia(experiencia.idExperiencia).subscribe((data) => {
-        location.reload();
+        this.ngOnInit();
       }
       );
   
