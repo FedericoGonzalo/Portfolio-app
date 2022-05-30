@@ -95,14 +95,14 @@ obternerFormaciones():Observable<any>{
 }
 
 agregarFormacion(formacion:Formacion):Observable<Formacion>{
-  return this.http.post<Formacion>(this.URL+'api/personas/persona/ver/1/newFormacion',formacion);
+  return this.http.post<any>(this.URL+'api/personas/persona/ver/1/newFormacion',formacion);
 
 }
 borrarFormacion(idFormacion:number):Observable<any>{
   return this.http.delete<any>(this.URL+'api/personas/persona/ver/delFormacion/'+idFormacion);
 }
 editarFormacion(formacion:Formacion):Observable<Formacion>{
-  return this.http.put<Formacion>(this.URL+'api/personas/persona/ver/1/editFormacion',formacion)
+  return this.http.put<any>(this.URL+'api/personas/persona/ver/1/editFormacion',formacion)
 }
 
 

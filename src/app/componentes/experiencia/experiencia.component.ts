@@ -112,7 +112,7 @@ export class ExperienciaComponent implements OnInit {
     let experiencia: Experiencia = this.experienciaList[index];
     if (confirm("¿Está seguro que desea borrar la experiencia seleccionada?")) {
       this.datosPortfolio.borrarExperiencia(experiencia.idExperiencia).subscribe((data) => {
-        this.ngOnInit();
+        location.reload();
       }
       );
   

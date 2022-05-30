@@ -25,8 +25,8 @@ export class EducacionComponent implements OnInit {
                 
                 
                 this.newFormacionForm=this.newFormacionBuilder.group({
-                  nombreTitulo:['TITULO', [Validators.required]],
-                  nombreInstituto: ['INSTIUTO', [Validators.required]],
+                  nombreTitulo:['', [Validators.required]],
+                  nombreInstituto: ['', [Validators.required]],
                   fechaInicio:['', [Validators.required]],
                   fechaFin: ['', [Validators.required]],
                   finalizado: ['', [Validators.required]],
@@ -81,7 +81,7 @@ borrarFormacion(index:number){
   if(confirm("¿Está seguro que desea borrar la Formacion seleccionado?")){
     this.datosPortfolio.borrarFormacion(formacion.idFormacion).subscribe((data) => {
 
-      this.ngOnInit();
+      location.reload();
     })
   }
 
